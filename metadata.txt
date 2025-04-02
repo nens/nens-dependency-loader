@@ -1,0 +1,27 @@
+[general]
+name=3Di Results Analysis
+qgisMinimumVersion=3.22
+description=3Di Results Analysis
+version=0.1.dev0
+author=3Di Water Management
+email=servicedesk@nelen-schuurmans.nl
+
+about=deps bla.
+tracker=https://github.com/nens/threedi-results-analysis
+repository=https://github.com/nens/threedi-results-analysis
+
+changelog=https://docs.3di.live/a_releasenotes_3di_mi.html
+
+# Tags are comma separated with spaces allowed
+tags=dependencies, hydrological
+
+homepage=https://www.3diwatermanagement.com
+category=Plugins
+icon=icons/icon.png
+experimental=False
+hasProcessingProvider=no
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False
+
+
