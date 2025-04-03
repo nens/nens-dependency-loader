@@ -1,0 +1,16 @@
+services:
+
+  qgis-desktop:
+    build: .
+
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix  # Allow GUI application to run in docker
+      - .:/root/.local/share/QGIS/QGIS3/profiles/default/python/plugins/nens_dependency_loader
+      - qgis-settings:/root/.local/share/QGIS/
+    environment:
+      - DISPLAY=unix${DISPLAY}
+    cap_add:
+      - SYS_PTRACE
+
+volumes:
+  qgis-settings:

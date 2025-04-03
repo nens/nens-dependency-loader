@@ -1,0 +1,39 @@
+name: test
+
+# Run on pull requests and on the main branch itself.
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "*"
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: build
+        run: docker compose build
+
+      - name: test
+        run: |
+          docker compose run -e QT_QPA_PLATFORM=offscreen qgis-desktop make check
+          docker compose run -e QT_QPA_PLATFORM=offscreen qgis-desktop make test
+          docker compose run -e QT_QPA_PLATFORM=offscreen qgis-desktop make flake8
+          docker compose run qgis-desktop make zip
+
+      - name: Publish package
+        if: startsWith(github.event.ref, 'refs/tags')
+        run: bash upload-artifact.sh
+        env:
+          NENS_DEPENDENCY_LOADER_ARTIFACTS_KEY: ${{ secrets.NENS_DEPENDENCY_LOADER_ARTIFACTS_KEY }}
+
+      - name: Publish dev-only package
+        if: ${{ !startsWith(github.event.ref, 'refs/tags') }}
+        run: bash upload-dev-artifact.sh
+        env:
+          NENS_DEPENDENCY_LOADER_DEV_ARTIFACTS_KEY: ${{ secrets.NENS_DEPENDENCY_LOADER_DEV_ARTIFACTS_KEY }}
