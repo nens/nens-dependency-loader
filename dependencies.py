@@ -143,8 +143,13 @@ def ensure_everything_installed():
         if restart_required or not restart_marker.exists():
             if _is_windows():
                 # We always want to restart when deps are missing
-                QMessageBox.information(None, "Restart required", 
-                    "Please restart QGIS to complete the installation process of N&S Dependencies.",)
+                msg = "Please restart QGIS to complete the installation "
+                msg += "process of N&S Dependencies."
+                QMessageBox.information(
+                    None,
+                    "Restart required",
+                    msg,
+                )
 
                 restart_marker.touch()
 
