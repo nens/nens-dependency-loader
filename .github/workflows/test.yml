@@ -37,3 +37,4 @@ jobs:
         run: bash upload-dev-artifact.sh
         env:
           NENS_DEPENDENCY_LOADER_DEV_ARTIFACTS_KEY: ${{ secrets.NENS_DEPENDENCY_LOADER_DEV_ARTIFACTS_KEY }}
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 

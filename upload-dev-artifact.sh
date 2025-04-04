@@ -3,9 +3,7 @@
 # for development purposes only.
 set -e
 
-BRANCH=${{ github.head_ref || github.ref_name }}
-
-ARTIFACT=nens_dependency_loader-${BRANCH}.zip
+ARTIFACT=nens_dependency_loader-${BRANCH_NAME}.zip
 PROJECT=nens_dependency_loader-dev
 
 # Rename generated zip to include branch name.

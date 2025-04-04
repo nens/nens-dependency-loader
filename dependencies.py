@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QProgressBar
 from PyQt5.QtWidgets import QProgressDialog
 from qgis.core import Qgis
+from qgis.PyQt.QtWidgets import QMessageBox
 
 import importlib
 import logging
@@ -142,13 +143,9 @@ def ensure_everything_installed():
         if restart_required or not restart_marker.exists():
             if _is_windows():
                 # We always want to restart when deps are missing
-                from threedi_results_analysis.utils.user_messages import pop_up_info
+                QMessageBox.information(None, "Restart required", 
+                    "Please restart QGIS to complete the installation process of N&S Dependencies.",)
 
-                pop_up_info(
-                    "Please restart QGIS to complete the installation process of "
-                    "3Di Results Analysis.",
-                    title="Restart required",
-                )
                 restart_marker.touch()
 
         # Always update the import mechanism
