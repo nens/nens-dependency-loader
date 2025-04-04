@@ -27,7 +27,8 @@ The *ensure_everything_installed* function is called by our main *\_\_init__.py*
   installed. It doesn't matter where they're installed: system packages,
   qgis-bundled or in the profile directory.
 - If something is missing, it calls python3's build-in "pip" to install it
-  from the *external-dependencies/* directory into the plugin's *deps/* directory.
+  from the *external-dependencies/* directory into the plugin's *deps/* directory. In case
+  the dependency is added to the plugin as tar, the tar is extracted.
 
 As a last step, *\_\_init__.py* calls *dependencies.check_importability* to make doubly sure all dependencies are present.
 
