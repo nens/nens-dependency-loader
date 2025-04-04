@@ -44,11 +44,11 @@ To run the tests:
 ```
 To run the linters (flake8, black and isort):
 ```
-  docker-compose run --rm qgis-desktop make test
+  docker-compose run --rm qgis-desktop make lint
 ```
 To create a zip:
 ```
-   docker-compose run --rm qgis-desktop make test
+   docker-compose run --rm qgis-desktop make zip
 ```
 ## Release
 

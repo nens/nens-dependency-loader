@@ -3,7 +3,7 @@
 # for development purposes only.
 set -e
 
-BRANCH=${GITHUB_HEAD_REF:-main}
+BRANCH=${{ github.head_ref || github.ref_name }}
 
 ARTIFACT=nens_dependency_loader-${BRANCH}.zip
 PROJECT=nens_dependency_loader-dev
