@@ -4,7 +4,7 @@
 set -e
 
 ARTIFACT=nens_dependency_loader-${BRANCH_NAME}.zip
-PROJECT=nens_dependency_loader-dev
+PROJECT=nens-dependency-loader-dev
 
 # Rename generated zip to include branch name.
 cp nens_dependency_loader.zip ${ARTIFACT}
