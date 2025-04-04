@@ -18,8 +18,8 @@ import sys
 import tarfile
 
 
-# If you add a dependency, also adjust external-dependencies/populate.sh. in case 
-# the dependency is a tar, the constraint should be the explicit version (e.g. "==3.8.0")
+# If you add a dependency, also adjust external-dependencies/populate.sh. in case
+# the dependency is a tar, the constraint should be the explicit version(e.g. "==3.8.0")
 Dependency = namedtuple("Dependency", ["name", "package", "constraint", "tar"])
 
 DEPENDENCIES = [
@@ -29,9 +29,7 @@ DEPENDENCIES = [
     Dependency(
         "importlib-resources", "importlib_resources", "", False
     ),  # backward compat. alembic
-    Dependency(
-        "zipp", "zipp", "", False
-    ),  # backward compat. alembic
+    Dependency("zipp", "zipp", "", False),  # backward compat. alembic
     Dependency("Mako", "mako", "", False),
     Dependency("cftime", "cftime", ">=1.5.0", False),  # threedigrid[results]
     Dependency("alembic", "alembic", "==1.14.*", False),
@@ -170,8 +168,9 @@ def _ensure_h5py_installed():
 
     In version 3.28.6, QGis updated their HDF5.dll binary from 1.10.7 to 1.14.0.
 
-    We use the H5pyMarker to mark the installed h5py version. This is because we cannot check the version
-    by importing h5py, as Qgis will crash if the HDF5 and h5py binaries do not match.
+    We use the H5pyMarker to mark the installed h5py version. This is because we cannot
+    check the version by importing h5py, as Qgis will crash if the HDF5 and h5py
+    binaries do not match.
     """
     if QGIS_VERSION < 32806 and platform.system() == "Windows":
         hdf5_version = "1.10.7"
@@ -214,8 +213,7 @@ def _install_h5py(hdf5_version: str):
 
 
 class H5pyMarker:
-    """Marker indicating with which HDF5 binaries the h5py is installed.
-    """
+    """Marker indicating with which HDF5 binaries the h5py is installed."""
 
     H5PY_MARKER = OUR_DIR / ".h5py_marker"
 
@@ -299,7 +297,11 @@ def _uninstall_dependency(dependency):
     if dependency.tar:
         # just remove the folders
         path = _dependencies_target_dir()
-        items_to_remove = [node for node in os.listdir(str(path)) if (dependency.package in node or dependency.name in node)]
+        items_to_remove = [
+            node
+            for node in os.listdir(str(path))
+            if (dependency.package in node or dependency.name in node)
+        ]
         for f in items_to_remove:
             dep_path = str(path / f)
 
@@ -387,7 +389,8 @@ def _install_dependencies(dependencies, target_dir):
 
         if dependency.tar:
             # Just extract the tar into the target folder, we already now it exists
-            tar_path = f"{(OUR_DIR / 'external-dependencies')}/{dependency.name}-{dependency.constraint[2:]}.tar"
+            tar_path = f"{(OUR_DIR / 'external-dependencies')}/{dependency.name}"
+            tar_path += f"-{dependency.constraint[2:]}.tar"
             tar = tarfile.open(tar_path)
             tar.extractall(str(target_dir))
             tar.close()
@@ -490,12 +493,12 @@ def _check_presence(dependencies):
             missing.append(dependency)
         except pkg_resources.VersionConflict as e:
             print(
-                'Version conflict:\n'
-                f'    Installed: {e.dist}\n'
-                f'    Required: {e.req}'
+                "Version conflict:\n"
+                f"    Installed: {e.dist}\n"
+                f"    Required: {e.req}"
             )
             if isinstance(e, pkg_resources.ContextualVersionConflict):
-                print(f'    By: {e.required_by}')
+                print(f"    By: {e.required_by}")
             missing.append(dependency)
         except Exception as e:
             print(
@@ -513,11 +516,13 @@ def _refresh_python_import_mechanism():
     'importlib' and 'pkg_resources' need to update their internal data structures.
     """
     # This function should be called if any modules are created/installed while your
-    # program is running to guarantee all finders will notice the new module’s existence.
+    # program is running to guarantee all finders will notice the new module’s
+    # existence.
     importlib.invalidate_caches()
 
     # https://stackoverflow.com/questions/58612272/pkg-resources-get-distributionmymodule-version-not-updated-after-reload
-    # Apparantely pkg_resources needs to be reloaded to be up-to-date with newly installed packages
+    # Apparantely pkg_resources needs to be reloaded to be up-to-date with newly
+    # installed packages
     importlib.reload(pkg_resources)
 
 

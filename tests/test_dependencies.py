@@ -8,7 +8,7 @@ import pytest
 
 
 available_dependency = dependencies.Dependency("numpy", "numpy", "", False)
-dependency_with_wrong_version = dependencies.Dependency("numpy", "numpy", "==1972", False)
+dep_with_wrong_version = dependencies.Dependency("numpy", "numpy", "==1972", False)
 missing_dependency = dependencies.Dependency("reinout", "reinout", "", False)
 
 
@@ -31,9 +31,9 @@ def test_check_presence_2():
 
 
 def test_check_presence_3():
-    missing = dependencies._check_presence([dependency_with_wrong_version])
+    missing = dependencies._check_presence([dep_with_wrong_version])
     assert missing == [
-        dependency_with_wrong_version
+        dep_with_wrong_version
     ], "numpy is installed, but not with the requested version"
 
 
@@ -63,9 +63,7 @@ def test_uninstall_dependency(tmpdir, monkeypatch):
     small_dependencies = [
         Dependency("threedi-modelchecker", "threedi_modelchecker", ">=1.0.0", False)
     ]
-    dependencies._install_dependencies(
-        small_dependencies, target_dir=tmpdir
-    )
+    dependencies._install_dependencies(small_dependencies, target_dir=tmpdir)
     dependencies._uninstall_dependency(small_dependencies[0])
     for directory in os.listdir(tmpdir):
         assert "threedi_modelchecker" not in directory
@@ -92,7 +90,7 @@ def test_dependencies_target_dir_somewhere_else():
     # The dependencies folder is a subdir 'deps' of tmpdir
     plugin_folder = Path("/some/profile/dir")
     result = str(dependencies._dependencies_target_dir(our_dir=plugin_folder))
-    assert str(plugin_folder) + '/deps' == result
+    assert str(plugin_folder) + "/deps" == result
 
 
 def test_get_python_interpreter_linux():

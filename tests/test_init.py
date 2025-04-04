@@ -1,5 +1,3 @@
-
-
 from nens_dependency_loader.nens_dependency_loader import NenSDependencyLoader
 from pathlib import Path
 
@@ -8,6 +6,7 @@ import mock
 
 
 PLUGIN_DIR = Path(__file__).parent.parent
+
 
 def test_read_init():
     """Test that the plugin __init__ will validate on plugins.qgis.org."""
@@ -41,6 +40,7 @@ def test_read_init():
             metadata_file,
         )
         assert key in dict(metadata), message
+
 
 def test_smoke():
     NenSDependencyLoader(mock.Mock())

@@ -22,16 +22,23 @@ zip: compile
 	@echo "---------------------------"
 	rm -rf /tmp/$(PLUGINNAME)
 	cd /tmp; cp -r $(CURDIR) $(PLUGINNAME)
+	# Remove all dev files
 	rm -rf /tmp/$(PLUGINNAME)/tests
 	rm -rf /tmp/$(PLUGINNAME)/.git
+	rm -rf /tmp/$(PLUGINNAME)/.gitignore
+	rm -rf /tmp/$(PLUGINNAME)/.pytest_cache
 	rm -rf /tmp/$(PLUGINNAME)/.github
 	rm -rf /tmp/$(PLUGINNAME)/*.zip
 	rm -rf /tmp/$(PLUGINNAME)/Dockerfile
 	rm -rf /tmp/$(PLUGINNAME)/docker-compose.yml
 	rm -rf /tmp/$(PLUGINNAME)/docker-compose.override.yml
+	rm -rf /tmp/$(PLUGINNAME)/Makefile
+	rm -rf /tmp/$(PLUGINNAME)/requirements-dev.txt
+	rm -rf /tmp/$(PLUGINNAME)/setup.cfg
+	rm -rf /tmp/$(PLUGINNAME)/upload-artifact.sh
+	rm -rf /tmp/$(PLUGINNAME)/upload-dev-artifact.sh
+	rm -rf /tmp/$(PLUGINNAME)/version.rst
 	rm -rf /tmp/$(PLUGINNAME)/.dockerignore
-	rm -rf /tmp/$(PLUGINNAME)/external-dependencies/h5py
-	rm -rf /tmp/$(PLUGINNAME)/external-dependencies/scipy
 	rm -rf /tmp/$(PLUGINNAME)/deps
 	rm -rf /tmp/$(PLUGINNAME)/__pycache__
 	find /tmp/$(PLUGINNAME) -iname "*.pyc" -delete
@@ -43,24 +50,11 @@ check: constraints.txt
 	pip-compile --dry-run
 	rm requirements.in
 
-package: compile
-	# Create a zip package of the plugin named $(PLUGINNAME).zip.
-	# This requires use of git (your plugin development directory must be a
-	# git repository).
-	# To use, pass a valid commit or tag as follows:
-	#   make package VERSION=Version_0.3.2
-	@echo
-	@echo "------------------------------------"
-	@echo "Exporting plugin to zip package.	"
-	@echo "------------------------------------"
-	rm -f $(PLUGINNAME).zip
-	git archive --prefix=$(PLUGINNAME)/ -o $(PLUGINNAME).zip $(VERSION)
-	echo "Created package: $(PLUGINNAME).zip"
-
-flake8:
-	@echo "#### PEP8/pyflakes issues"
+lint:
+	isort .
+	black .
 	@flake8 . --extend-exclude=deps
-	@echo "No issues found."
+	
 
 clean:
 	@echo

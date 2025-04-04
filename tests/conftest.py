@@ -1,5 +1,4 @@
 from nens_dependency_loader import dependencies
-from pathlib import Path
 from qgis.core import QgsApplication
 
 import logging
@@ -8,6 +7,7 @@ import pytest
 
 logger = logging.getLogger(__name__)
 _singletons = {}
+
 
 @pytest.fixture(autouse=True)
 def qgis_app_initialized():
@@ -19,4 +19,3 @@ def qgis_app_initialized():
         _singletons["app"] = app
 
     dependencies.ensure_everything_installed()
-

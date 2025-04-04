@@ -21,9 +21,9 @@ jobs:
 
       - name: test
         run: |
-          docker compose run -e QT_QPA_PLATFORM=offscreen qgis-desktop make check
-          docker compose run -e QT_QPA_PLATFORM=offscreen qgis-desktop make test
-          docker compose run -e QT_QPA_PLATFORM=offscreen qgis-desktop make flake8
+          docker compose run qgis-desktop make check
+          docker compose run qgis-desktop make test
+          docker compose run qgis-desktop make flake8
           docker compose run qgis-desktop make zip
 
       - name: Publish package
