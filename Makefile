@@ -8,7 +8,7 @@ compile: external-dependencies/.generated.marker
 external-dependencies/.generated.marker: constraints.txt external-dependencies/populate.sh
 	cd external-dependencies && ./populate.sh
 
-constraints.txt: dependencies.py
+constraints.txt:
 	python3 dependencies.py
 
 test: clean compile
