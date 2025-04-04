@@ -1,4 +1,7 @@
-from PyQt5.QtWidgets import QAction, QMessageBox
+from . import dependencies
+from PyQt5.QtWidgets import QAction
+from PyQt5.QtWidgets import QMessageBox
+
 
 class NenSDependencyLoader:
     def __init__(self, iface):

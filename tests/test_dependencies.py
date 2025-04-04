@@ -1,6 +1,6 @@
+from nens_dependency_loader import dependencies
+from nens_dependency_loader.dependencies import Dependency
 from pathlib import Path
-from threedi_results_analysis import dependencies
-from threedi_results_analysis.dependencies import Dependency
 
 import mock
 import os
