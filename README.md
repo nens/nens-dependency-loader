@@ -1,7 +1,9 @@
 # N&S Dependency Loader
 
-QGIS comes bundled with several python libraries, but we need more. This plugin installs those
-python libraries at startup, as needed.
+QGIS comes bundled with several python libraries, but the N&S plugins need more. The required libraries are bundled with this plugin and in case a required library is missing, this plugin installs it.
+
+
+## Dependency handling
 
 The extra dependencies (as wheels and tars) are retrieved and stored into the
 *external-dependencies/* directory and bundled with the plugin. 
@@ -10,8 +12,6 @@ The plugin uses *dependencies.py* and installs the dependencies in the subfolder
 the plugin folder. The dependency folder is also added (prepended) to the path. *dependencies.py* has the master list of extra dependencies.
 
 Most are pip-installable just fine as they're pure python packages. There are some exceptions, for example *h5py*. This is a package that really needs to match various other libraries in the system. For windows, it means a custom built package (which we include in the plugin).
-
-## Our dependency handling
 
 *dependencies.py* can be called directly, which generates a *constraints.txt* file for use with pip. The *Makefile* handles this for us: it updates the constraints file.
 

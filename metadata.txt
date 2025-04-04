@@ -6,21 +6,19 @@ version=0.1.dev0
 author=Nelen & Schuurmans
 email=servicedesk@nelen-schuurmans.nl
 
-about=deps bla.
+about=QGIS comes bundled with several python libraries, but the N&S plugins need more. The required libraries are bundled with this plugin and in case a required library is missing, this plugin installs it.
 tracker=https://github.com/nens/nens-dependency-loader
 repository=https://github.com/nens/nens-dependency-loader
 changelog=https://github.com/nens/nens-dependency-loader/blob/main/CHANGES.rst
 
 # Tags are comma separated with spaces allowed
-tags=dependencies, hydrological
+tags=dependencies, hydrological, lizard, threedi
 
 homepage=https://nelen-schuurmans.nl/
 category=Plugins
 icon=icon.svg
-experimental=False
+experimental=True
 hasProcessingProvider=no
 
 # deprecated flag (applies to the whole plugin, not just a single version)
 deprecated=False
-
-
