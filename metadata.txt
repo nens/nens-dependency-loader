@@ -16,7 +16,7 @@ tags=dependencies, hydrological
 
 homepage=https://nelen-schuurmans.nl/
 category=Plugins
-icon=icons/icon.png
+icon=icon.svg
 experimental=False
 hasProcessingProvider=no
 
