@@ -1,3 +1,5 @@
+from nens_dependency_loader import dependencies
+from pathlib import Path
 from qgis.core import QgsApplication
 
 import logging
@@ -15,3 +17,6 @@ def qgis_app_initialized():
         app.initQgis()
         logger.debug("Initialized qgis (for testing). Settings: %s", app.showSettings())
         _singletons["app"] = app
+
+    dependencies.ensure_everything_installed()
+

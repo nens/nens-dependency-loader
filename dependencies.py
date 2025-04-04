@@ -17,6 +17,7 @@ import subprocess
 import sys
 import tarfile
 
+
 # If you add a dependency, also adjust external-dependencies/populate.sh. in case 
 # the dependency is a tar, the constraint should be the explicit version (e.g. "==3.8.0")
 Dependency = namedtuple("Dependency", ["name", "package", "constraint", "tar"])
