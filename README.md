@@ -1,18 +1,17 @@
 # N&S Dependency Loader
 
-Qgis comes bundled with several python libraries, but we need a few more. The
-extra dependencies (as wheels and tars) are retrieved and stored into the
-*external-dependencies/* directory and bundled with the plugin.
+QGIS comes bundled with several python libraries, but we need more. This plugin installs those
+python libraries at startup, as needed.
+
+The extra dependencies (as wheels and tars) are retrieved and stored into the
+*external-dependencies/* directory and bundled with the plugin. 
 
 The plugin uses *dependencies.py* and installs the dependencies in the subfolder *deps/* of
-the plugin folder. The dependency folder is also added (prepended) to the path.
-
-*dependencies.py* has the master list of extra dependencies.
+the plugin folder. The dependency folder is also added (prepended) to the path. *dependencies.py* has the master list of extra dependencies.
 
 Most are pip-installable just fine as they're pure python packages. There are some exceptions, for example *h5py*. This is a package that really needs to match various other libraries in the system. For windows, it means a custom built package (which we include in the plugin).
 
 ## Our dependency handling
-
 
 *dependencies.py* can be called directly, which generates a *constraints.txt* file for use with pip. The *Makefile* handles this for us: it updates the constraints file.
 
@@ -31,3 +30,36 @@ The *ensure_everything_installed* function is called by our main *\_\_init__.py*
   from the *external-dependencies/* directory into the plugin's *deps/* directory.
 
 As a last step, *\_\_init__.py* calls *dependencies.check_importability* to make doubly sure all dependencies are present.
+
+## Local development
+
+In order to run the tests, linting and packaging, first build the docker
+```
+  docker-compose build
+```
+To run the tests:
+```
+  docker-compose run --rm qgis-desktop make test
+```
+To run the linters (flake8, black and isort):
+```
+  docker-compose run --rm qgis-desktop make test
+```
+To create a zip:
+```
+   docker-compose run --rm qgis-desktop make test
+```
+## Release
+
+Make sure you have *zest.releaser* with *qgispluginreleaser* installed. The
+*qgispluginreleaser* ensures the metadata.txt, which is used by the qgis plugin
+manager is also updated to the new version. To make a new release enter the following
+command
+```
+    fullrelease
+```
+
+This creates a new release and tag on github. Additionally, a zip file
+*nens_dependency_loader.<version>.zip* is created. Github actions is configured to also
+create this zip and upload it to https://plugins.lizard.net/ when a new tag is
+created, using the *upload-artifact.sh* script.

@@ -1,4 +1,4 @@
-PLUGINNAME = threedi_results_analysis
+PLUGINNAME = nens_dependency_loader
 
 default: compile
 

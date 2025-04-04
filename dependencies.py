@@ -88,7 +88,7 @@ logger = logging.getLogger(__name__)
 
 def create_progress_dialog(progress, text):
     dialog = QProgressDialog()
-    dialog.setWindowTitle("3Di Results Analysis install progress")
+    dialog.setWindowTitle("N&S Dependency Loader install progress")
     dialog.setLabelText(text)
     dialog.setWindowFlags(Qt.WindowStaysOnTopHint)
     bar = QProgressBar(dialog)
