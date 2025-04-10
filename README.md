@@ -1,16 +1,16 @@
-# N&S Dependency Loader
+# Dependency Loader
 
 QGIS comes bundled with several python libraries, but the N&S plugins need more. The required libraries are bundled with this plugin and in case a required library is missing, this plugin installs it.
 
 ## Usage
 
-In order for your plugin to be loaded after the N&S dependency loader, append *N&S Dependency Loader* to the list of plugin dependencies in *metadata.txt*, or add the following line:
+In order for your plugin to be loaded after the dependency loader, append *Dependency Loader* to the list of plugin dependencies in *metadata.txt*, or add the following line:
 
 ```
-plugin_dependencies=N&S Dependency Loader
+plugin_dependencies=Dependency Loader
 ```
 
-It might be the case that your plugin needs have access to the dependencies for testing (without the N&S Dependency Loader being installed). In that case, add these dependencies (without version constraints) to a *requirements-test.txt* and install these test dependencies in the container combined with the *constraints.txt* generated from N&S Dependency Loader.
+It might be the case that your plugin needs have access to the dependencies for testing (without the Dependency Loader being installed). In that case, add these dependencies (without version constraints) to a *requirements-test.txt* and install these test dependencies in the container combined with the *constraints.txt* generated from Dependency Loader.
 
 ```
 ADD https://raw.githubusercontent.com/nens/nens-dependency-loader/refs/heads/main/dependencies.py /root/dependencies.py
