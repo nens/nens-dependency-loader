@@ -41,6 +41,7 @@ requests \
 python-dateutil \
 PyJWT \
 certifi \
+threedi-scenario-downloader \
 
 # Start a build/ directory for easier later cleanup.
 mkdir build
