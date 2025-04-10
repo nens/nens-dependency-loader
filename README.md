@@ -10,10 +10,11 @@ In order for your plugin to be loaded after the N&S dependency loader, append *N
 plugin_dependencies=N&S Dependency Loader
 ```
 
-It might be the case that your plugin needs have access to the dependencies for testing (without the N&S Dependency Loader being installed). In that case, install the test dependencies in a folder in python path and generate constraints from dependency loader.
+It might be the case that your plugin needs have access to the dependencies for testing (without the N&S Dependency Loader being installed). In that case, add these dependencies (without version constraints) to a *requirements-test.txt* and install these test dependencies in the container combined with the *constraints.txt* generated from N&S Dependency Loader.
 
 ```
 ADD https://raw.githubusercontent.com/nens/nens-dependency-loader/refs/heads/main/dependencies.py /root/dependencies.py
+# Generates a constraints.txt
 RUN python3 /root/dependencies.py
 RUN pip3 install -r /root/requirements-test.txt -c /root/constraints.txt --no-deps --upgrade --target /usr/share/qgis/python/plugins
 ```
