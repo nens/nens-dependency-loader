@@ -59,6 +59,7 @@ DEPENDENCIES = [
     Dependency("python-dateutil", "dateutil", "", False),
     Dependency("PyJWT", "jwt", "", False),
     Dependency("certifi", "certifi", "", False),
+    Dependency("threedi-scenario-downloader", "threedi_scenario_downloader", "", False)
 ]
 
 # On Windows, the hdf5 binary and thus h5py version depends on the QGis version
