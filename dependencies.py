@@ -52,6 +52,13 @@ DEPENDENCIES = [
     Dependency("greenlet", "greenlet", "!=0.4.17", False),
     Dependency("threedi-mi-utils", "threedi_mi_utils", "==0.1.10", False),
     Dependency("hydxlib", "hydxlib", "==1.7.2", False),
+    Dependency("threedi-api-client", "threedi_api_client", "", False),
+    Dependency("six", "six", "", False),
+    Dependency("urllib3", "urllib3", "", False),
+    Dependency("requests", "requests", "", False),
+    Dependency("python-dateutil", "python_dateutil", "", False),
+    Dependency("PyJWT", "PyJWT", "", False),
+    Dependency("certifi", "certifi", "", False),
 ]
 
 # On Windows, the hdf5 binary and thus h5py version depends on the QGis version

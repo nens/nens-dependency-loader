@@ -34,6 +34,13 @@ threedigrid \
 typing-extensions \
 zipp \
 hydxlib \
+threedi-api-client \
+six \
+urllib3 \
+requests \
+python-dateutil \
+PyJWT \
+certifi \
 
 # Start a build/ directory for easier later cleanup.
 mkdir build
