@@ -19,11 +19,14 @@ class NenSDependencyLoader:
             QIcon(str(PLUGIN_DIR / "icon.svg")), "Info", self.iface.mainWindow()
         )
         self.action.triggered.connect(self.run)
-        self.iface.addToolBarIcon(self.action)
+        self.iface.addPluginToMenu("N&S Dependency Loader", self.action)
 
     def unload(self):
-        self.iface.removeToolBarIcon(self.action)
+        self.iface.removePluginMenu("N&S Dependency Loader", self.action)
         del self.action
 
     def run(self):
-        QMessageBox.information(None, "N&S Dependency Loader", "Info")
+        versions = "no constraints file detected"
+        with open(str(PLUGIN_DIR / "constraints.txt"), "r") as file:
+            versions = file.read()
+        QMessageBox.information(None, "N&S Dependency Loader", versions)
