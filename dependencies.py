@@ -56,8 +56,8 @@ DEPENDENCIES = [
     Dependency("six", "six", "", False),
     Dependency("urllib3", "urllib3", "", False),
     Dependency("requests", "requests", "", False),
-    Dependency("python-dateutil", "python_dateutil", "", False),
-    Dependency("PyJWT", "PyJWT", "", False),
+    Dependency("python-dateutil", "dateutil", "", False),
+    Dependency("PyJWT", "jwt", "", False),
     Dependency("certifi", "certifi", "", False),
 ]
 
