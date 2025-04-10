@@ -4,13 +4,13 @@ QGIS comes bundled with several python libraries, but the N&S plugins need more.
 
 ## Usage
 
-In order for your plugin to be loaded after the N&S dependency loader, append *N&S Dependency Loader* to the list of plugin dependencies in *metadata.txt*, or add the following line:
+In order for your plugin to be loaded after the N&S dependency loader, append `N&S Dependency Loader` to the list of plugin dependencies in `metadata.txt`, or add the following line:
 
 ```
 plugin_dependencies=N&S Dependency Loader
 ```
 
-It might be the case that your plugin needs have access to the dependencies for testing (without the N&S Dependency Loader being installed). In that case, add these dependencies (without version constraints) to a *requirements-test.txt* and install these test dependencies in the container combined with the *constraints.txt* generated from N&S Dependency Loader.
+It might be the case that your plugin needs have access to the dependencies for testing (without the N&S Dependency Loader being installed). In that case, add these dependencies (without version constraints) to a `requirements-test.txt` and install these test dependencies in the container combined with the `constraints.txt` generated from N&S Dependency Loader.
 
 ```
 ADD https://raw.githubusercontent.com/nens/nens-dependency-loader/refs/heads/main/dependencies.py /root/dependencies.py
@@ -22,31 +22,31 @@ RUN pip3 install -r /root/requirements-test.txt -c /root/constraints.txt --no-de
 ## Dependency handling
 
 The extra dependencies (as wheels and tars) are retrieved and stored into the
-*external-dependencies/* directory and bundled with the plugin. 
+`external-dependencies/` directory and bundled with the plugin. 
 
-The plugin uses *dependencies.py* and installs the dependencies in the subfolder *deps/* of
-the plugin folder. The dependency folder is also added (prepended) to the path. *dependencies.py* has the master list of extra dependencies.
+The plugin uses `dependencies.py` and installs the dependencies in the subfolder `deps/` of
+the plugin folder. The dependency folder is also added (prepended) to the path. `dependencies.py` has the master list of extra dependencies.
 
-Most are pip-installable just fine as they're pure python packages. There are some exceptions, for example *h5py*. This is a package that really needs to match various other libraries in the system. For windows, it means a custom built package (which we include in the plugin).
+Most are pip-installable just fine as they're pure python packages. There are some exceptions, for example `h5py`. This is a package that really needs to match various other libraries in the system. For windows, it means a custom built package (which we include in the plugin).
 
-*dependencies.py* can be called directly, which generates a *constraints.txt* file for use with pip. The *Makefile* handles this for us: it updates the constraints file.
+`dependencies.py` can be called directly, which generates a `constraints.txt` file for use with pip. The `Makefile` handles this for us: it updates the constraints file.
 
-The *external-dependencies/* directory has a *populate.sh* script. The *Makefile* runs it when needed. It populates the directory with our dependencies so that we can bundle it with the plugin:
+The `external-dependencies/` directory has a `populate.sh` script. The `Makefile` runs it when needed. It populates the directory with our dependencies so that we can bundle it with the plugin:
 
-- *populate.sh* uses *pip3 wheel* to create universal wheel files for the
+- `populate.sh` uses `pip3 wheel` to create universal wheel files for the
   four pure python libaries.
-- It also downloads and tars the custom build of *h5py* from QGIS.
+- It also downloads and tars the custom build of `h5py` from QGIS.
 
-The *ensure_everything_installed* function is called by our main *\_\_init__.py*:
+The `ensure_everything_installed` function is called by our main `__init__.py`:
 
 - It first checks if the correct versions of our dependencies are
   installed. It doesn't matter where they're installed: system packages,
   qgis-bundled or in the profile directory.
-- If something is missing, it calls python3's build-in "pip" to install it
-  from the *external-dependencies/* directory into the plugin's *deps/* directory. In case
+- If something is missing, it calls python3's built-in "pip" to install it
+  from the `external-dependencies/` directory into the plugin's `deps/` directory. In case
   the dependency is added to the plugin as tar, the tar is extracted.
 
-As a last step, *\_\_init__.py* calls *dependencies.check_importability* to make doubly sure all dependencies are present.
+As a last step, `__init__.py` calls `dependencies.check_importability` to make doubly sure all dependencies are present.
 
 ## Local development
 
@@ -68,8 +68,8 @@ To create a zip:
 ```
 ## Release
 
-Make sure you have *zest.releaser* with *qgispluginreleaser* installed. The
-*qgispluginreleaser* ensures the metadata.txt, which is used by the qgis plugin
+Make sure you have `zest.releaser` with `qgispluginreleaser` installed. The
+`qgispluginreleaser` ensures the metadata.txt, which is used by the qgis plugin
 manager is also updated to the new version. To make a new release enter the following
 command
 ```
@@ -77,6 +77,6 @@ command
 ```
 
 This creates a new release and tag on github. Additionally, a zip file
-*nens_dependency_loader.<version>.zip* is created. Github actions is configured to also
+`nens_dependency_loader.<version>.zip` is created. Github actions is configured to also
 create this zip and upload it to https://plugins.lizard.net/ when a new tag is
-created, using the *upload-artifact.sh* script.
+created, using the `upload-artifact.sh` script.
