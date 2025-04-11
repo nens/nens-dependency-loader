@@ -361,7 +361,7 @@ def _uninstall_dependency(dependency):
         exit_code = process.wait()
         if exit_code:
             print("Uninstalling %s failed" % dependency.name)
-    except Exception as e:
+    except Exception:
         print("Uninstalling %s failed" % dependency.name)
 
 
