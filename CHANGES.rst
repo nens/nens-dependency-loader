@@ -4,7 +4,7 @@ N&S Dependency Loader changelog
 1.0.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Some more exception catching in uninstall process of dependencies.
 
 
 1.0.2 (2025-04-11)

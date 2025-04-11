@@ -323,7 +323,7 @@ def _uninstall_dependency(dependency):
                     else:
                         print(f"Deleting folder {f} from {path}")
                         shutil.rmtree(dep_path)
-            except PermissionError as e:
+            except Exception as e:
                 print(f"Unable to remove {dep_path} ({str(e)})")
         return
 
@@ -333,32 +333,35 @@ def _uninstall_dependency(dependency):
         startupinfo = subprocess.STARTUPINFO()
         # Prevents terminal screens from popping up
         startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
-    process = subprocess.Popen(
-        [
-            python_interpreter,
-            "-m",
-            "pip",
-            "uninstall",
-            "--yes",
-            (dependency.name),
-        ],
-        universal_newlines=True,
-        stdin=subprocess.PIPE,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        startupinfo=startupinfo,
-    )
-    # The input/output/error stream handling is a bit involved, but it is
-    # necessary because of a python bug on windows 7, see
-    # https://bugs.python.org/issue3905 .
-    i, o, e = (process.stdin, process.stdout, process.stderr)
-    i.close()
-    result = o.read() + e.read()
-    o.close()
-    e.close()
-    print(result)
-    exit_code = process.wait()
-    if exit_code:
+    try:
+        process = subprocess.Popen(
+            [
+                python_interpreter,
+                "-m",
+                "pip",
+                "uninstall",
+                "--yes",
+                (dependency.name),
+            ],
+            universal_newlines=True,
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            startupinfo=startupinfo,
+        )
+        # The input/output/error stream handling is a bit involved, but it is
+        # necessary because of a python bug on windows 7, see
+        # https://bugs.python.org/issue3905 .
+        i, o, e = (process.stdin, process.stdout, process.stderr)
+        i.close()
+        result = o.read() + e.read()
+        o.close()
+        e.close()
+        print(result)
+        exit_code = process.wait()
+        if exit_code:
+            print("Uninstalling %s failed" % dependency.name)
+    except Exception as e:
         print("Uninstalling %s failed" % dependency.name)
 
 
