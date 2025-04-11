@@ -66,13 +66,10 @@ DEPENDENCIES = [
 # QGis upgraded from hdf5 == 1.10.7 to hdf5 == 1.14.0 in QGis 3.28.6
 QGIS_VERSION = Qgis.QGIS_VERSION_INT
 if QGIS_VERSION < 32806 and platform.system() == "Windows":
-    SUPPORTED_HDF5_VERSIONS = ["1.10.7"]
     H5PY_DEPENDENCY = Dependency("h5py", "h5py", "==2.10.0", False)
 elif QGIS_VERSION >= 34000 and platform.system() == "Windows":
-    SUPPORTED_HDF5_VERSIONS = ["1.14.0"]
     H5PY_DEPENDENCY = Dependency("h5py", "h5py", "==3.10.0", True)
 else:
-    SUPPORTED_HDF5_VERSIONS = ["1.14.0"]
     H5PY_DEPENDENCY = Dependency("h5py", "h5py", "==3.8.0", True)
 
 if QGIS_VERSION < 32811 and platform.system() == "Windows":
@@ -177,73 +174,18 @@ def _ensure_h5py_installed():
     Windows version of h5py.
 
     In version 3.28.6, QGis updated their HDF5.dll binary from 1.10.7 to 1.14.0.
-
-    We use the H5pyMarker to mark the installed h5py version. This is because we cannot
-    check the version by importing h5py, as Qgis will crash if the HDF5 and h5py
-    binaries do not match.
     """
-    if QGIS_VERSION < 32806 and platform.system() == "Windows":
-        hdf5_version = "1.10.7"
-    else:
-        hdf5_version = "1.14.0"
+
     h5py_missing = _check_presence([H5PY_DEPENDENCY])
-    marker_version = H5pyMarker.version()
     if h5py_missing:
-        return _install_h5py(hdf5_version)
-
-    if hdf5_version in SUPPORTED_HDF5_VERSIONS:
-        if marker_version == hdf5_version:
-            # Do nothing
-            pass
-        else:
-            return _install_h5py(hdf5_version)
+        try:
+            _install_dependencies(
+                [H5PY_DEPENDENCY], target_dir=_dependencies_target_dir()
+            )
+        except RuntimeError:
+            return False
 
     return True
-
-
-def _install_h5py(hdf5_version: str):
-    if hdf5_version not in SUPPORTED_HDF5_VERSIONS:
-        # raise an error because we cannot continue
-        message = (
-            f"Unsupported HDF5 version: {hdf5_version}. "
-            f"The following HDF5 versions are supported: {SUPPORTED_HDF5_VERSIONS}"
-        )
-        raise RuntimeError(message)
-
-    # In case the (old) h5py library is already imported, we cannot uninstall
-    # h5py because the windows acquires a lock on the *.dll-files. Therefore
-    # we need to restart Qgis.
-    # _uninstall_dependency(H5PY_DEPENDENCY)
-    try:
-        _install_dependencies([H5PY_DEPENDENCY], target_dir=_dependencies_target_dir())
-    except RuntimeError:
-        return False
-    H5pyMarker.create(hdf5_version)
-    return True
-
-
-class H5pyMarker:
-    """Marker indicating with which HDF5 binaries the h5py is installed."""
-
-    H5PY_MARKER = OUR_DIR / ".h5py_marker"
-
-    @classmethod
-    def version(cls) -> str:
-        if cls.H5PY_MARKER.exists():
-            with open(cls.H5PY_MARKER, "r") as marker:
-                version = marker.readline()
-            return version
-        else:
-            return ""
-
-    @classmethod
-    def create(cls, version: str):
-        with open(cls.H5PY_MARKER, "w") as marker:
-            marker.write(version)
-
-    @classmethod
-    def remove(cls):
-        cls.H5PY_MARKER.unlink()
 
 
 def _ensure_prerequisite_is_installed(prerequisite="pip"):

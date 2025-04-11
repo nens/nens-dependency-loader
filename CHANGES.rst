@@ -4,7 +4,7 @@ N&S Dependency Loader changelog
 1.0.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Removed HDF5 checks.
 
 
 1.0.3 (2025-04-11)
