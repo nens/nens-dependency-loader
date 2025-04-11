@@ -1,7 +1,7 @@
 N&S Dependency Loader changelog
 ========================
 
-1.0.2 (unreleased)
+1.0.2 (2025-04-11)
 ------------------
 
 - Bump hydxlib to 1.7.3
