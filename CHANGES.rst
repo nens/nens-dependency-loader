@@ -1,8 +1,8 @@
 N&S Dependency Loader changelog
 ========================
 
-0.1 (unreleased)
------------------
+1.0 (2025-04-10)
+----------------
 
-- Initial commit.
+- Initial release.
 

@@ -1,8 +1,8 @@
 [general]
-name=N&S Dependency Loader
+name=Dependency Loader
 qgisMinimumVersion=3.22
-description=A QGIS plugin that installs and imports all required dependencies for N&S plugins.
-version=0.1.dev0
+description=A QGIS plugin that installs and imports all required dependencies for NenS plugins.
+version=1.0
 author=Nelen & Schuurmans
 email=servicedesk@nelen-schuurmans.nl
 
