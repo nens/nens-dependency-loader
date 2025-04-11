@@ -4,7 +4,7 @@ N&S Dependency Loader changelog
 1.0.6 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Improved error handling.
 
 
 1.0.5 (2025-04-11)

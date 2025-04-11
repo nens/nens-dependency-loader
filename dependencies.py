@@ -182,7 +182,7 @@ def _ensure_h5py_installed():
             _install_dependencies(
                 [H5PY_DEPENDENCY], target_dir=_dependencies_target_dir()
             )
-        except RuntimeError:
+        except PermissionError:
             return False
 
     return True
