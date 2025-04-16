@@ -36,7 +36,7 @@ DEPENDENCIES = [
     Dependency("alembic", "alembic", "==1.14.*", False),
     Dependency("threedigrid", "threedigrid", "==2.3.*", False),
     Dependency("threedi-schema", "threedi_schema", "==0.300.26", False),
-    Dependency("threedi-modelchecker", "threedi_modelchecker", "==2.17.13", False),
+    Dependency("threedi-modelchecker", "threedi_modelchecker", "==2.18.0", False),
     Dependency("threedidepth", "threedidepth", "==0.6.3", False),
     Dependency("click", "click", ">=8.0", False),
     Dependency("packaging", "packaging", "", False),
