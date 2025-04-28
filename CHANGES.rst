@@ -4,7 +4,7 @@ N&S Dependency Loader changelog
 1.0.7 (unreleased)
 ------------------
 
-- Bumped threedi-modelchecker to 2.18.0
+- Bumped threedi-modelchecker to 2.18.1
 
 
 1.0.6 (2025-04-11)
