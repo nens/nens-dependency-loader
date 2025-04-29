@@ -1,7 +1,7 @@
 N&S Dependency Loader changelog
 ========================
 
-1.0.8 (unreleased)
+1.0.8 (2025-04-29)
 ------------------
 
 - Bumped threedigrid_builder to 1.24.3
