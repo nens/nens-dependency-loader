@@ -1,18 +1,18 @@
 [general]
-name=Dependency Loader
+name=Nelen and Schuurmans Dependency Loader
 qgisMinimumVersion=3.22
-description=A QGIS plugin that installs and imports all required dependencies for NenS plugins.
+description=A QGIS plugin that installs and imports all required dependencies for Nelen & Schuurmans plugins.
 version=1.0.7
 author=Nelen & Schuurmans
 email=servicedesk@nelen-schuurmans.nl
 
-about=QGIS comes bundled with several python libraries, but the N&S plugins need more. The required libraries are bundled with this plugin and in case a required library is missing, this plugin installs it.
+about=This plugin will be installed automatically by Rana and 3Di plugins that need it. It provides python dependencies that these plugins share. They are bundled in one plugin to prevent dependency conflicts and to make updating easier. 
 tracker=https://github.com/nens/nens-dependency-loader
 repository=https://github.com/nens/nens-dependency-loader
 changelog=https://github.com/nens/nens-dependency-loader/blob/main/CHANGES.rst
 
 # Tags are comma separated with spaces allowed
-tags=dependencies, hydrological, lizard, threedi
+tags=dependencies, 3Di, Rana
 
 homepage=https://nelen-schuurmans.nl/
 category=Plugins
