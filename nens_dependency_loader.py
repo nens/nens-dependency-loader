@@ -19,10 +19,10 @@ class NenSDependencyLoader:
             QIcon(str(PLUGIN_DIR / "icon.svg")), "Info", self.iface.mainWindow()
         )
         self.action.triggered.connect(self.run)
-        self.iface.addPluginToMenu("N&S Dependency Loader", self.action)
+        self.iface.addPluginToMenu("N&&S Dependency Loader", self.action)
 
     def unload(self):
-        self.iface.removePluginMenu("N&S Dependency Loader", self.action)
+        self.iface.removePluginMenu("N&&S Dependency Loader", self.action)
         del self.action
 
     def run(self):

@@ -4,7 +4,8 @@ N&S Dependency Loader changelog
 1.0.8 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Bumped threedigrid_builder to 1.24.3
+- Bumped threedi_api_client to 4.1.11.dev0
 
 
 1.0.7 (2025-04-29)
