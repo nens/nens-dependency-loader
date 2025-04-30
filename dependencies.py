@@ -149,7 +149,7 @@ def ensure_everything_installed():
             if _is_windows():
                 # We always want to restart when deps are missing
                 msg = "Please restart QGIS to complete the installation "
-                msg += "process of N&S Dependencies."
+                msg += "process of Nelen & Schuurmans Dependency Loader."
                 QMessageBox.information(
                     None,
                     "Restart required",
