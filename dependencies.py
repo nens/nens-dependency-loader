@@ -126,7 +126,7 @@ def ensure_everything_installed():
     restart_required = False
     if platform.system() == "Windows":
         missing += _check_presence(WINDOWS_PLATFORM_DEPENDENCIES)
-        if not _ensure_h5py_installed():
+        if not _ensure_h5py_installed(target_dir):
             restart_required = True
 
     if missing:
@@ -165,7 +165,7 @@ def ensure_everything_installed():
         print("Dependencies up to date")
 
 
-def _ensure_h5py_installed():
+def _ensure_h5py_installed(target_dir):
     """
     On Windows Qgis comes with a hdf5 version installed.
     This plugin uses the h5py python package, which is built against a specific version
@@ -177,6 +177,17 @@ def _ensure_h5py_installed():
     """
 
     h5py_missing = _check_presence([H5PY_DEPENDENCY])
+
+    if not h5py_missing:
+        # Sometimes DLL remain after a reinstall of the plugin, this incorrectly makes
+        # pkg_resources think that h5py is still present. Do explicit check on file
+        # to make sure.
+        h5py_version_file = target_dir / H5PY_DEPENDENCY.name / "version.py"
+        if not h5py_version_file.exists():
+            # clean the remnants and mark as missing
+            _uninstall_dependency(H5PY_DEPENDENCY)
+            h5py_missing = True
+
     if h5py_missing:
         try:
             _install_dependencies(
