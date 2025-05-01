@@ -34,7 +34,7 @@ Most are pip-installable just fine as they're pure python packages. There are so
 The `external-dependencies/` directory has a `populate.sh` script. The `Makefile` runs it when needed. It populates the directory with our dependencies so that we can bundle it with the plugin:
 
 - `populate.sh` uses `pip3 wheel` to create universal wheel files for the
-  four pure python libaries.
+  four pure python libraries.
 - It also downloads and tars the custom build of `h5py` from QGIS.
 
 The `ensure_everything_installed` function is called by our main `__init__.py`:
@@ -80,3 +80,8 @@ This creates a new release and tag on github. Additionally, a zip file
 `nens_dependency_loader.<version>.zip` is created. Github actions is configured to also
 create this zip and upload it to https://plugins.lizard.net/ when a new tag is
 created, using the `upload-artifact.sh` script.
+
+
+## Common problems
+
+* **Missing dependencies:** when the version of the wheel in `external_depencies` does not match the version in `dependencies.py` this results in a missing dependency. Currently this is not handled automatically. The easiest way to fix this is to clean the `external_dependencies` folder by running `git clean -xdf`.
