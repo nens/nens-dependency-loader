@@ -4,7 +4,7 @@ N&S Dependency Loader changelog
 1.0.9 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Proper clean up of h5py.
 
 
 1.0.8 (2025-04-29)
