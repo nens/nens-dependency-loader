@@ -17,7 +17,7 @@ tags=dependencies, 3Di, Rana
 homepage=https://nelen-schuurmans.nl/
 category=Plugins
 icon=icon.svg
-experimental=True
+experimental=False
 hasProcessingProvider=no
 
 # deprecated flag (applies to the whole plugin, not just a single version)

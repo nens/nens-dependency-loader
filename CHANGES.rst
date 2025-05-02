@@ -4,7 +4,7 @@ N&S Dependency Loader changelog
 1.0.10 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Removed experimental label.
 
 
 1.0.9 (2025-05-01)
