@@ -34,9 +34,9 @@ DEPENDENCIES = [
     Dependency("Mako", "mako", "", False),
     Dependency("cftime", "cftime", ">=1.5.0", False),  # threedigrid[results]
     Dependency("alembic", "alembic", "==1.14.*", False),
-    Dependency("threedigrid", "threedigrid", "==2.3.*", False),
+    Dependency("threedigrid", "threedigrid", "==2.3.5", False),
     Dependency("threedi-schema", "threedi_schema", "==0.300.26", False),
-    Dependency("threedi-modelchecker", "threedi_modelchecker", "==2.18.1", False),
+    Dependency("threedi-modelchecker", "threedi_modelchecker", "==2.18.3", False),
     Dependency("threedidepth", "threedidepth", "==0.6.3", False),
     Dependency("click", "click", ">=8.0", False),
     Dependency("packaging", "packaging", "", False),

@@ -5,6 +5,7 @@ N&S Dependency Loader changelog
 -------------------
 
 - Bumped threedi-api-client to 4.1.12
+- Bumped threedigrid and model-checker.
 
 
 1.0.10 (2025-05-02)
