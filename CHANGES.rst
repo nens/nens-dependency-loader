@@ -1,7 +1,7 @@
 N&S Dependency Loader changelog
 ========================
 
-1.0.11 (unreleased)
+1.0.11 (2025-05-12)
 -------------------
 
 - Bumped threedi-api-client to 4.1.12
