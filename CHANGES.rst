@@ -1,13 +1,8 @@
 N&S Dependency Loader changelog
 ========================
 
-1.0.13 (unreleased)
--------------------
 
-- Nothing changed yet.
-
-
-1.0.12 (2025-05-14)
+1.0.11 (unreleased)
 -------------------
 
 - Restrained click version.
