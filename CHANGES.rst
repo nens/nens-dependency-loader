@@ -6,7 +6,7 @@ N&S Dependency Loader changelog
 -------------------
 
 - Restrained click version.
-- Bump modelchecker to 2.18.4
+- Bump modelchecker to 2.18.5
 
 
 1.0.11 (2025-05-12)
