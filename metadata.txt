@@ -2,7 +2,7 @@
 name=Nelen and Schuurmans Dependency Loader
 qgisMinimumVersion=3.22
 description=A QGIS plugin that installs and imports all required dependencies for Nelen and Schuurmans plugins.
-version=1.0.11
+version=1.1
 author=Nelen & Schuurmans
 email=servicedesk@nelen-schuurmans.nl
 
