@@ -5,7 +5,7 @@ N&S Dependency Loader changelog
 1.2 (unreleased)
 ----------------
 
-- Bumped modelchecker to 2.18.8
+- Bumped modelchecker to 2.18.9
 
 
 1.1 (2025-06-10)
