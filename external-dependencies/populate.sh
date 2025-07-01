@@ -42,6 +42,7 @@ python-dateutil \
 PyJWT \
 certifi \
 threedi-scenario-downloader \
+bridgestyle \
 
 # Start a build/ directory for easier later cleanup.
 mkdir build
