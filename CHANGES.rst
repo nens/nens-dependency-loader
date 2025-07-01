@@ -6,6 +6,7 @@ N&S Dependency Loader changelog
 ----------------
 
 - Bumped modelchecker to 2.18.9
+- Add bridgestyle dependency for rana-qgis-plugin.
 
 
 1.1 (2025-06-10)
