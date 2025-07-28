@@ -6,6 +6,7 @@ N&S Dependency Loader changelog
 ------------------
 
 - Bumped modelchecker to 2.18.13
+- Bumped schema to 0.300.28
 
 
 1.2.1 (2025-07-16)
