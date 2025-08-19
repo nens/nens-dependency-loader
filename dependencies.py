@@ -24,7 +24,7 @@ import tarfile
 Dependency = namedtuple("Dependency", ["name", "package", "constraint", "tar"])
 
 DEPENDENCIES = [
-    Dependency("SQLAlchemy", "sqlalchemy", "==2.0.6", False),
+    Dependency("SQLAlchemy", "sqlalchemy", "==2.0.43", False),
     Dependency("GeoAlchemy2", "geoalchemy2", "==0.15.*", False),
     Dependency("pyqtgraph", "pyqtgraph", ">=0.13.2", False),
     Dependency(

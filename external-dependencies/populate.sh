@@ -102,7 +102,7 @@ cp scipy/scipy-1.6.2-cp39-cp39-win_amd64.whl .
 cp h5py/h5py-2.10.0-cp39-cp39-win_amd64.whl .
 
 # Copy pure wheels to prevent pip in docker (or Windows) to select platform dependent version
-wget https://files.pythonhosted.org/packages/cd/84/66072ee12c3e79061f183c09a24be24f45bb1286600589640363d9d416b0/SQLAlchemy-2.0.6-py3-none-any.whl#sha256=c5d754665edea1ecdc79e3023659cb5594372e10776f3b3734d75c2c3ce95013
+wget https://files.pythonhosted.org/packages/b8/d9/13bdde6521f322861fab67473cec4b1cc8999f3871953531cf61945fad92/sqlalchemy-2.0.43-py3-none-any.whl#sha256=1681c21dd2ccee222c2fe0bef671d1aef7c504087c9c4e800371cfcc8ac966fc
 
 # Download windows wheels (cp39, cp312, win, amd64)
 wget https://files.pythonhosted.org/packages/0d/c5/76b91923135a4fa7c34a4c601a05d2e5bac39f81b2e203b0a7a3a707fc0b/threedigrid_builder-1.24.3-cp39-cp39-win_amd64.whl#sha256=9eb8768a2be6be6b33b587fcccd1cc973e3d555a8865f3b068341de5bb4d1e90

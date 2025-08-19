@@ -7,6 +7,7 @@ N&S Dependency Loader changelog
 
 - Bumped modelchecker to 2.18.13
 - Bumped schema to 0.300.28
+- Bumped SQLAlchemy to 2.0.43 (#18)
 
 
 1.2.1 (2025-07-16)
