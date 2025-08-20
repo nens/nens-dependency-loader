@@ -117,12 +117,11 @@ wget https://files.pythonhosted.org/packages/43/21/a5d9df1d21514883333fc86584c07
 wget https://files.pythonhosted.org/packages/5f/d6/5f59a5e5570c4414d94c6da4c97731deab832cbd14eaf23189d54a92d1e1/cftime-1.6.2-cp39-cp39-win_amd64.whl#sha256=86fe550b94525c327578a90b2e13418ca5ba6c636d5efe3edec310e631757eea
 wget https://files.pythonhosted.org/packages/17/98/ba5b4a2f37c6c88454b696dd5c7a4e76fc8bfd014364b47ddd7e2cec0fcd/cftime-1.6.4-cp312-cp312-win_amd64.whl#sha256=5b5ad7559a16bedadb66af8e417b6805f758acb57aa38d2730844dfc63a1e667
 
-# Download linux wheels (cp38, cp310, cp312, cp313)
+# Download linux wheels (cp310, cp312, cp313)
 wget https://files.pythonhosted.org/packages/e2/80/49e25fb806cf17a79f09d179a7f94fa7ff493e7e5e80a40b0fe8aec40c8e/threedigrid_builder-1.24.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=ae8e051cdc8fdec07b41233d4201cbd9fdda97e358c7791b67fdb237f4d70aa3
 wget https://files.pythonhosted.org/packages/13/87/771d853dc138e93ce089103ea64c007c4e7467ca6446c796345ca487dd15/threedigrid_builder-1.24.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=5198217c2e0ccd81d8ec0bc36f1a307d6c74095ff4b65e61344585d34e46987a
 wget https://files.pythonhosted.org/packages/96/b0/8e1947d82a42db148bb9df28ac18c53e3548c2e2e625cb93cb172be41de9/threedigrid_builder-1.24.6-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=7242c85f907b55fca53c702e4cca0512963f9e3575012f94389c780543636d4b
 
-wget https://files.pythonhosted.org/packages/4e/03/f3bcb7d96aef6d56b62e2f25996f161c05f92a45d452165be2007b756e0f/shapely-2.0.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
 wget https://files.pythonhosted.org/packages/06/07/0700e5e33c44bc87e19953244c29f73669cfb6f19868899170f9c7e34554/shapely-2.0.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
 wget https://files.pythonhosted.org/packages/d5/7d/9a57e187cbf2fbbbdfd4044a4f9ce141c8d221f9963750d3b001f0ec080d/shapely-2.0.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
 wget https://files.pythonhosted.org/packages/af/b0/f8169f77eac7392d41e231911e0095eb1148b4d40c50ea9e34d999c89a7e/shapely-2.0.6-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
@@ -131,7 +130,6 @@ wget https://files.pythonhosted.org/packages/6e/11/a1f1af20b6a1a8069bc75012569d0
 wget https://files.pythonhosted.org/packages/57/5c/7c6f50cb12be092e1dccb2599be5a942c3416dbcfb76efcf54b3f8be4d8d/greenlet-3.1.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=99cfaa2110534e2cf3ba31a7abcac9d328d1d9f1b95beede58294a60348fba36
 wget https://files.pythonhosted.org/packages/d9/42/b87bc2a81e3a62c3de2b0d550bf91a86939442b7ff85abb94eec3fc0e6aa/greenlet-3.1.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=efc0f674aa41b92da8c49e0346318c6075d734994c3c4e4430b1c3f853e498e4
 
-wget https://files.pythonhosted.org/packages/44/51/bc9d47beee47afda1d335f05efa848dc403bd183344f03d431281518e8ab/cftime-1.5.0-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.whl#sha256=7a820e16357dbdc9723b2059f7178451de626a8b2e5f80b9d91a77e3dac42133
 wget https://files.pythonhosted.org/packages/e1/17/d8042d82f44c08549b535bf2e7d1e87aa1863df5ed6cf1cf773eb2dfdf67/cftime-1.6.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=acb294fdb80e33545ae54b4421df35c4e578708a5ffce1c00408b2294e70ecef
 wget https://files.pythonhosted.org/packages/04/56/233d817ef571d778281f3d639049b342f6ff0bb4de4c5ee630befbd55319/cftime-1.6.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=f92f2e405eeda47b30ab6231d8b7d136a55f21034d394f93ade322d356948654
 wget https://files.pythonhosted.org/packages/c3/f8/6f13d37abb7ade46e65a08acc31af776a96dde0eb569e05d4c4b01422ba6/cftime-1.6.4.post1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=6579c5c83cdf09d73aa94c7bc34925edd93c5f2c7dd28e074f568f7e376271a0
