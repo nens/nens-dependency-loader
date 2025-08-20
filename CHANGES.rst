@@ -9,8 +9,7 @@ N&S Dependency Loader changelog
 - Bumped schema to 0.300.28
 - Bumped SQLAlchemy to 2.0.43 (#18)
 - Bumped threedigrid-builder to 1.24.6
-- Added CPython 3.13 wheels for Linux
-- Removed CPython 3.8 wheels for Linux
+- Replaced CPython 3.8 wheels for linux with CPython 3.13 wheels
 
 
 1.2.1 (2025-07-16)
