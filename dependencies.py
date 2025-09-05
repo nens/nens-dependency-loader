@@ -24,7 +24,7 @@ import tarfile
 Dependency = namedtuple("Dependency", ["name", "package", "constraint", "tar"])
 
 DEPENDENCIES = [
-    Dependency("SQLAlchemy", "sqlalchemy", "==2.0.6", False),
+    Dependency("SQLAlchemy", "sqlalchemy", "==2.0.43", False),
     Dependency("GeoAlchemy2", "geoalchemy2", "==0.15.*", False),
     Dependency("pyqtgraph", "pyqtgraph", ">=0.13.2", False),
     Dependency(
@@ -35,8 +35,8 @@ DEPENDENCIES = [
     Dependency("cftime", "cftime", ">=1.5.0", False),  # threedigrid[results]
     Dependency("alembic", "alembic", "==1.14.*", False),
     Dependency("threedigrid", "threedigrid", "==2.3.5", False),
-    Dependency("threedi-schema", "threedi_schema", "==0.300.26", False),
-    Dependency("threedi-modelchecker", "threedi_modelchecker", "==2.18.9", False),
+    Dependency("threedi-schema", "threedi_schema", "==0.300.28", False),
+    Dependency("threedi-modelchecker", "threedi_modelchecker", "==2.18.13", False),
     Dependency("threedidepth", "threedidepth", "==0.6.3", False),
     Dependency("click", "click", ">=8.0, <8.2", False),
     Dependency("packaging", "packaging", "", False),
@@ -47,7 +47,7 @@ DEPENDENCIES = [
     Dependency("networkx", "networkx", "", False),
     Dependency("condenser", "condenser", ">=0.2.1", False),
     Dependency("Shapely", "shapely", ">=2.0.0", False),
-    Dependency("threedigrid-builder", "threedigrid_builder", ">=1.24.3", False),
+    Dependency("threedigrid-builder", "threedigrid_builder", ">=1.24.6", False),
     Dependency("h5netcdf", "h5netcdf", "", False),
     Dependency("greenlet", "greenlet", "!=0.4.17", False),
     Dependency("threedi-mi-utils", "threedi_mi_utils", "==0.1.10", False),

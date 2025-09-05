@@ -2,10 +2,20 @@ N&S Dependency Loader changelog
 ========================
 
 
-1.3 (unreleased)
-----------------
+1.2.2 (unreleased)
+------------------
 
-- Nothing changed yet.
+- Bumped modelchecker to 2.18.13
+- Bumped schema to 0.300.28
+- Bumped SQLAlchemy to 2.0.43 (#18)
+- Bumped threedigrid-builder to 1.24.6
+- Replaced CPython 3.8 wheels for linux with CPython 3.13 wheels
+
+
+1.2.1 (2025-07-16)
+------------------
+
+- Bumped modelchecker to 2.18.11
 
 
 1.2 (2025-07-01)
