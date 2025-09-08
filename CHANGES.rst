@@ -5,7 +5,7 @@ N&S Dependency Loader changelog
 1.2.2 (unreleased)
 ------------------
 
-- Bumped modelchecker to 2.18.13
+- Bumped modelchecker to 2.18.14
 - Bumped schema to 0.300.28
 - Bumped SQLAlchemy to 2.0.43 (#18)
 - Bumped threedigrid-builder to 1.24.6
