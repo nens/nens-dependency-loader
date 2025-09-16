@@ -14,7 +14,7 @@ constraints.txt:
 test: clean compile
 	QT_QPA_PLATFORM=offscreen pytest
 
-zip: compile
+zip: 
 	@echo
 	@echo "---------------------------"
 	@echo "Creating plugin zip bundle."
