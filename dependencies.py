@@ -1,9 +1,9 @@
 from collections import namedtuple
 from pathlib import Path
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication
-from PyQt5.QtWidgets import QProgressBar
-from PyQt5.QtWidgets import QProgressDialog
+from qgis.PyQt.QtCore import Qt
+from qgis.PyQt.QtWidgets import QApplication
+from qgis.PyQt.QtWidgets import QProgressBar
+from qgis.PyQt.QtWidgets import QProgressDialog
 from qgis.core import Qgis
 from qgis.PyQt.QtWidgets import QMessageBox
 
@@ -97,7 +97,7 @@ def create_progress_dialog(progress, text):
     dialog = QProgressDialog()
     dialog.setWindowTitle("N&S Dependency Loader install progress")
     dialog.setLabelText(text)
-    dialog.setWindowFlags(Qt.WindowStaysOnTopHint)
+    dialog.setWindowFlags(Qt.WindowType.WindowStaysOnTopHint)
     bar = QProgressBar(dialog)
     bar.setTextVisible(True)
     bar.setValue(progress)

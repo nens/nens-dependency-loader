@@ -1,7 +1,7 @@
 from . import dependencies
 from pathlib import Path
-from PyQt5.QtWidgets import QAction
-from PyQt5.QtWidgets import QMessageBox
+from qgis.PyQt.QtWidgets import QAction
+from qgis.PyQt.QtWidgets import QMessageBox
 from qgis.PyQt.QtGui import QIcon
 
 
