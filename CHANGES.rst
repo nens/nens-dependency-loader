@@ -6,6 +6,7 @@ N&S Dependency Loader changelog
 ------------------
 
 - Bumped threedi-mi-utils (Qt6 support) (nens/threedi-mi-utils#7)
+- Bumped bridge-style to 0.1.5
 
 
 1.2.2 (2025-09-08)
