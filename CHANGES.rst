@@ -2,7 +2,7 @@ N&S Dependency Loader changelog
 ========================
 
 
-1.2.3 (unreleased)
+1.2.3 (2025-10-01)
 ------------------
 
 - Bumped threedi-mi-utils (Qt6 support) (nens/threedi-mi-utils#7)
