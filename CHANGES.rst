@@ -7,6 +7,8 @@ N&S Dependency Loader changelog
 
 - Bumped threedi-mi-utils (Qt6 support) (nens/threedi-mi-utils#7)
 - Bumped bridge-style to 0.1.5
+- Prepared for Qt6/Qgis 4.0
+- Bumped threedidepth to 0.7.1
 
 
 1.2.2 (2025-09-08)
