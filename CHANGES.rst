@@ -2,7 +2,7 @@ N&S Dependency Loader changelog
 ========================
 
 
-1.2.4 (unreleased)
+1.2.4 (2025-10-07)
 ------------------
 
 - Bumped threedidepth to 0.7.4
