@@ -5,7 +5,7 @@ N&S Dependency Loader changelog
 1.2.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Bumped threedidepth to 0.7.4
 
 
 1.2.3 (2025-10-01)
