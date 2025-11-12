@@ -5,7 +5,9 @@ N&S Dependency Loader changelog
 1.2.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Bumped threedi-api-client to 4.2.0
+- Bumped threedi-modelchecker to 2.18.15
+- Bumped threedi-schema to 0.300.29
 
 
 1.2.4 (2025-10-07)
