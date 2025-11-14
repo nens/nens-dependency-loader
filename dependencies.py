@@ -52,7 +52,7 @@ DEPENDENCIES = [
     Dependency("greenlet", "greenlet", "!=0.4.17", False),
     Dependency("threedi-mi-utils", "threedi_mi_utils", "==0.1.11", False),
     Dependency("hydxlib", "hydxlib", "==1.7.4", False),
-    Dependency("threedi-api-client", "threedi_api_client", "==4.2.0", False),
+    Dependency("threedi-api-client", "threedi_api_client", "==4.2.1", False),
     Dependency("six", "six", "", False),
     Dependency("urllib3", "urllib3", "", False),
     Dependency("requests", "requests", "", False),
