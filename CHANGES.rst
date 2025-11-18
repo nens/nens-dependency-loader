@@ -5,7 +5,7 @@ N&S Dependency Loader changelog
 1.2.6 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Hard pin pyqtgraph to 0.13.7 for Crayfish.
 
 
 1.2.5 (2025-11-18)

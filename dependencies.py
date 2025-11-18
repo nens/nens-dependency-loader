@@ -26,7 +26,9 @@ Dependency = namedtuple("Dependency", ["name", "package", "constraint", "tar"])
 DEPENDENCIES = [
     Dependency("SQLAlchemy", "sqlalchemy", "==2.0.43", False),
     Dependency("GeoAlchemy2", "geoalchemy2", "==0.15.*", False),
-    Dependency("pyqtgraph", "pyqtgraph", ">=0.13.2", False),
+    Dependency(
+        "pyqtgraph", "pyqtgraph", "==0.13.7", False
+    ),  # must be same as the version in Crayfish
     Dependency(
         "importlib-resources", "importlib_resources", "", False
     ),  # backward compat. alembic
