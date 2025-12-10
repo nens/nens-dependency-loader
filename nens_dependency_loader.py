@@ -13,13 +13,19 @@ PLUGIN_DIR = Path(__file__).parent
 
 
 def check_for_update():
-    pyplugin_installer.instance().fetchAvailablePlugins(True)
-    plugin = plugins.all()["nens_dependency_loader"]
-    if not plugin:
-        return
+    try:
+        pyplugin_installer.instance().fetchAvailablePlugins(True)
+        plugin = plugins.all()["nens_dependency_loader"]
+        if not plugin:
+            return
 
-    if compareVersions(plugin["version_installed"], plugin["version_available"]) == 2:
-        pyplugin_installer.instance().installPlugin("nens_dependency_loader")
+        if (
+            compareVersions(plugin["version_installed"], plugin["version_available"])
+            == 2
+        ):
+            pyplugin_installer.instance().installPlugin("nens_dependency_loader")
+    except:  # NOQA
+        pass
 
 
 class NenSDependencyLoader:
