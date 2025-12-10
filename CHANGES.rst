@@ -5,7 +5,7 @@ N&S Dependency Loader changelog
 1.2.7 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Bump bridgestyle to 0.1.6
 
 
 1.2.6 (2025-11-18)
