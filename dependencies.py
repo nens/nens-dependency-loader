@@ -1,11 +1,11 @@
 from collections import namedtuple
 from pathlib import Path
+from qgis.core import Qgis
 from qgis.PyQt.QtCore import Qt
 from qgis.PyQt.QtWidgets import QApplication
+from qgis.PyQt.QtWidgets import QMessageBox
 from qgis.PyQt.QtWidgets import QProgressBar
 from qgis.PyQt.QtWidgets import QProgressDialog
-from qgis.core import Qgis
-from qgis.PyQt.QtWidgets import QMessageBox
 
 import importlib
 import logging
@@ -66,7 +66,7 @@ DEPENDENCIES = [
     Dependency("typing-inspection", "typing_inspection", "==0.4.*", False),
     Dependency("annotated-types", "annotated_types", "==0.6.*", False),
     Dependency("pydantic", "pydantic", "==2.11.10", False),
-    Dependency("pydantic-core", "pydantic_core", "==2.33.2", False)
+    Dependency("pydantic-core", "pydantic_core", "==2.33.2", False),
 ]
 
 # On Windows, the hdf5 binary and thus h5py version depends on the QGis version
@@ -150,9 +150,7 @@ def ensure_everything_installed():
             restart_required = True
             pass
 
-        restart_marker = Path(target_dir / "restarted.marker")
-
-        if restart_required or not restart_marker.exists():
+        if restart_required:
             if _is_windows():
                 # We always want to restart when deps are missing
                 msg = "Please restart QGIS to complete the installation "
@@ -162,8 +160,6 @@ def ensure_everything_installed():
                     "Restart required",
                     msg,
                 )
-
-                restart_marker.touch()
 
         # Always update the import mechanism
         _refresh_python_import_mechanism()

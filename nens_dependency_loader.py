@@ -1,15 +1,30 @@
 from . import dependencies
 from pathlib import Path
+from pyplugin_installer.installer_data import plugins
+from pyplugin_installer.version_compare import compareVersions
+from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QAction
 from qgis.PyQt.QtWidgets import QMessageBox
-from qgis.PyQt.QtGui import QIcon
+
+import pyplugin_installer
 
 
 PLUGIN_DIR = Path(__file__).parent
 
 
+def check_for_update():
+    pyplugin_installer.instance().fetchAvailablePlugins(True)
+    plugin = plugins.all()["nens_dependency_loader"]
+    if not plugin:
+        return
+
+    if compareVersions(plugin["version_installed"], plugin["version_available"]) == 2:
+        pyplugin_installer.instance().installPlugin("nens_dependency_loader")
+
+
 class NenSDependencyLoader:
     def __init__(self, iface):
+        check_for_update()
         self.iface = iface
         dependencies.ensure_everything_installed()
         dependencies.check_importability()
