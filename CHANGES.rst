@@ -2,7 +2,7 @@ N&S Dependency Loader changelog
 ========================
 
 
-1.2.7 (unreleased)
+1.2.7 (2025-12-15)
 ------------------
 
 - Added auto-update
