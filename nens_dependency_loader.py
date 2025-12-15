@@ -92,7 +92,7 @@ class SettingsDialog(QDialog):
         self.auto_update_cb.setChecked(checked)
         layout.addWidget(self.auto_update_cb, 0, 2)
 
-        spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        spacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
         layout.addItem(spacer, 1, 0)
 
         ok_bn = QPushButton("Ok", self)
