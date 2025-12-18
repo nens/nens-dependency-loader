@@ -5,7 +5,7 @@ N&S Dependency Loader changelog
 1.2.8 (unreleased)
 ------------------
 
-- Bump threedi_api_client
+- Bump threedi_api_client and threedi_mi_utils
 
 
 1.2.7 (2025-12-15)
