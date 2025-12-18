@@ -2,6 +2,12 @@ N&S Dependency Loader changelog
 ========================
 
 
+1.2.9 (unreleased)
+------------------
+
+- Nothing changed yet.
+
+
 1.2.8 (2025-12-18)
 ------------------
 
