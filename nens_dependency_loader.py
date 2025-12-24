@@ -35,6 +35,9 @@ def check_for_update():
             compareVersions(plugin["version_installed"], plugin["version_available"])
             == 2
         ):
+            pyplugin_installer.instance().uninstallPlugin(
+                "nens_dependency_loader", quiet=True
+            )
             pyplugin_installer.instance().installPlugin("nens_dependency_loader")
     except:  # NOQA
         pass
@@ -92,7 +95,9 @@ class SettingsDialog(QDialog):
         self.auto_update_cb.setChecked(checked)
         layout.addWidget(self.auto_update_cb, 0, 2)
 
-        spacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        spacer = QSpacerItem(
+            20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+        )
         layout.addItem(spacer, 1, 0)
 
         ok_bn = QPushButton("Ok", self)
