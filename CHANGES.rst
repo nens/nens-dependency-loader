@@ -2,7 +2,7 @@ N&S Dependency Loader changelog
 ========================
 
 
-1.2.10 (unreleased)
+1.2.10 (2025-12-24)
 -------------------
 
 - Proper uninstall before early update.
