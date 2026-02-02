@@ -6,6 +6,7 @@ N&S Dependency Loader changelog
 -------------------
 
 - Update bridge-style
+- Pin pip version in requirements-dev (causes problem with pip-tools)
 
 
 1.2.10 (2025-12-24)
