@@ -5,7 +5,7 @@ N&S Dependency Loader changelog
 1.2.11 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Update bridge-style
 
 
 1.2.10 (2025-12-24)

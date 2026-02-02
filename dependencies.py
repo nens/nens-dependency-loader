@@ -62,7 +62,7 @@ DEPENDENCIES = [
     Dependency("PyJWT", "jwt", "", False),
     Dependency("certifi", "certifi", "", False),
     Dependency("threedi-scenario-downloader", "threedi_scenario_downloader", "", False),
-    Dependency("bridgestyle", "bridgestyle", ">=0.1.6", False),
+    Dependency("bridgestyle", "bridgestyle", ">=0.1.7", False),
     Dependency("typing-inspection", "typing_inspection", "==0.4.*", False),
     Dependency("annotated-types", "annotated_types", "==0.6.*", False),
     Dependency("pydantic", "pydantic", "==2.11.10", False),
