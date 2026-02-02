@@ -2,7 +2,7 @@ N&S Dependency Loader changelog
 ========================
 
 
-1.2.11 (unreleased)
+1.2.11 (2026-02-02)
 -------------------
 
 - Update bridge-style
