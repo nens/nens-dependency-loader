@@ -4,6 +4,7 @@ from qgis.core import QgsApplication
 import logging
 import pytest
 
+
 logger = logging.getLogger(__name__)
 _singletons = {}
 
