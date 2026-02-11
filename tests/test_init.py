@@ -4,7 +4,6 @@ from pathlib import Path
 import configparser
 import mock
 
-
 PLUGIN_DIR = Path(__file__).parent.parent
 
 

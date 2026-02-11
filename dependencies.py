@@ -1,4 +1,8 @@
 from collections import namedtuple
+from importlib.metadata import PackageNotFoundError
+from importlib.metadata import version
+from packaging.specifiers import SpecifierSet
+from packaging.version import Version
 from pathlib import Path
 from qgis.core import Qgis
 from qgis.PyQt.QtCore import Qt
@@ -16,11 +20,6 @@ import shutil
 import subprocess
 import sys
 import tarfile
-
-from importlib.metadata import version, PackageNotFoundError
-from packaging.version import Version
-from packaging.specifiers import SpecifierSet
-
 
 # If you add a dependency, also adjust external-dependencies/populate.sh. in case
 # the dependency is a tar, the constraint should be the explicit version(e.g. "==3.8.0")
@@ -451,7 +450,10 @@ def _check_presence(dependencies):
         print("Checking presence of %s..." % requirement)
         try:
             available_version = version(dependency.name)
-            print(f"Requirement {dependency.name} found: {dependency.name + available_version}")
+            print(
+                f"Requirement {dependency.name} found: "
+                f"{dependency.name + available_version}"
+            )
             constraint = SpecifierSet(dependency.constraint)
             if Version(available_version) not in constraint:
                 print(
@@ -462,12 +464,14 @@ def _check_presence(dependencies):
                 missing.append(dependency)
         except PackageNotFoundError as e:
             print(
-                f"Dependency '{dependency.name}' {dependency.constraint} not found {str(e)}"
+                f"Dependency '{dependency.name}' "
+                f"{dependency.constraint} not found {str(e)}"
             )
             missing.append(dependency)
         except Exception as e:
             print(
-                f"Installing dependency '{dependency.name}' {dependency.constraint} went wrong {str(e)}"
+                f"Installing dependency '{dependency.name}' "
+                f"{dependency.constraint} went wrong {str(e)}"
             )
             missing.append(dependency)
     return missing
