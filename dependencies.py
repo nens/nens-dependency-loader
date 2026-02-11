@@ -451,7 +451,7 @@ def _check_presence(dependencies):
         print("Checking presence of %s..." % requirement)
         try:
             available_version = version(dependency.name)
-            print("Requirement %s found: %s" % (requirement))
+            print(f"Requirement {dependency.name} found: {dependency.name + available_version}")
             constraint = SpecifierSet(dependency.constraint)
             if Version(available_version) not in constraint:
                 print(
@@ -462,14 +462,12 @@ def _check_presence(dependencies):
                 missing.append(dependency)
         except PackageNotFoundError as e:
             print(
-                "Dependency '%s' (%s) not found (%s)"
-                % (dependency.name, dependency.constraint, str(e))
+                f"Dependency '{dependency.name}' {dependency.constraint} not found {str(e)}"
             )
             missing.append(dependency)
         except Exception as e:
             print(
-                "Installing dependency '%s' (%s) went wrong (%s)"
-                % (dependency.name, dependency.constraint, str(e))
+                f"Installing dependency '{dependency.name}' {dependency.constraint} went wrong {str(e)}"
             )
             missing.append(dependency)
     return missing
