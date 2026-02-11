@@ -10,13 +10,16 @@ from qgis.PyQt.QtWidgets import QProgressDialog
 import importlib
 import logging
 import os
-import pkg_resources
 import platform
 import setuptools  # noqa: https://github.com/pypa/setuptools/issues/2993
 import shutil
 import subprocess
 import sys
 import tarfile
+
+from importlib.metadata import version, PackageNotFoundError
+from packaging.version import Version
+from packaging.specifiers import SpecifierSet
 
 
 # If you add a dependency, also adjust external-dependencies/populate.sh. in case
@@ -125,8 +128,6 @@ def ensure_everything_installed():
     if str(target_dir) not in sys.path:
         sys.path.insert(0, str(target_dir))
 
-    _refresh_python_import_mechanism()
-
     _ensure_prerequisite_is_installed()
 
     missing = _check_presence(DEPENDENCIES)
@@ -161,9 +162,6 @@ def ensure_everything_installed():
                     msg,
                 )
 
-        # Always update the import mechanism
-        _refresh_python_import_mechanism()
-
     else:
         print("Dependencies up to date")
 
@@ -184,7 +182,7 @@ def _ensure_h5py_installed(target_dir):
     if not h5py_missing:
         # Sometimes DLL remain after a reinstall of the plugin, this incorrectly makes
         # pkg_resources think that h5py is still present. Do explicit check on file
-        # to make sure.
+        # to make sure. This may not be necessary now that pkg_resources is replaced.
         h5py_version_file = target_dir / H5PY_DEPENDENCY.name / "version.py"
         if not h5py_version_file.exists():
             # clean the remnants and mark as missing
@@ -452,22 +450,21 @@ def _check_presence(dependencies):
         requirement = dependency.name + dependency.constraint
         print("Checking presence of %s..." % requirement)
         try:
-            result = pkg_resources.require(requirement)
-            print("Requirement %s found: %s" % (requirement, result))
-        except pkg_resources.DistributionNotFound as e:
+            available_version = version(dependency.name)
+            print("Requirement %s found: %s" % (requirement))
+            constraint = SpecifierSet(dependency.constraint)
+            if Version(available_version) not in constraint:
+                print(
+                    "Version conflict:\n"
+                    f"    Installed: {available_version}\n"
+                    f"    Required: {dependency.constraint}"
+                )
+                missing.append(dependency)
+        except PackageNotFoundError as e:
             print(
                 "Dependency '%s' (%s) not found (%s)"
                 % (dependency.name, dependency.constraint, str(e))
             )
-            missing.append(dependency)
-        except pkg_resources.VersionConflict as e:
-            print(
-                "Version conflict:\n"
-                f"    Installed: {e.dist}\n"
-                f"    Required: {e.req}"
-            )
-            if isinstance(e, pkg_resources.ContextualVersionConflict):
-                print(f"    By: {e.required_by}")
             missing.append(dependency)
         except Exception as e:
             print(
@@ -476,23 +473,6 @@ def _check_presence(dependencies):
             )
             missing.append(dependency)
     return missing
-
-
-def _refresh_python_import_mechanism():
-    """Refresh the import mechanism.
-
-    This is required when deps are dynamically installed/removed. The modules
-    'importlib' and 'pkg_resources' need to update their internal data structures.
-    """
-    # This function should be called if any modules are created/installed while your
-    # program is running to guarantee all finders will notice the new module’s
-    # existence.
-    importlib.invalidate_caches()
-
-    # https://stackoverflow.com/questions/58612272/pkg-resources-get-distributionmymodule-version-not-updated-after-reload
-    # Apparantely pkg_resources needs to be reloaded to be up-to-date with newly
-    # installed packages
-    importlib.reload(pkg_resources)
 
 
 def generate_constraints_txt(target_dir=OUR_DIR):
