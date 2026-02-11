@@ -180,8 +180,8 @@ def _ensure_h5py_installed(target_dir):
 
     if not h5py_missing:
         # Sometimes DLL remain after a reinstall of the plugin, this incorrectly makes
-        # pkg_resources think that h5py is still present. Do explicit check on file
-        # to make sure. This may not be necessary now that pkg_resources is replaced.
+        # importlib.metadata.version think that h5py is still present. Do explicit
+        # check on file to make sure.
         h5py_version_file = target_dir / H5PY_DEPENDENCY.name / "version.py"
         if not h5py_version_file.exists():
             # clean the remnants and mark as missing
