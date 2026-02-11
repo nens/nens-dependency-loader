@@ -95,7 +95,7 @@ else:
         Dependency("scipy", "scipy", "==1.10.1", True),
     ]
 
-INTERESTING_IMPORTS = ["numpy", "osgeo", "pip", "setuptools"]
+INTERESTING_IMPORTS = ["numpy", "osgeo", "pip", "setuptools", "packaging"]
 
 OUR_DIR = Path(__file__).parent
 
