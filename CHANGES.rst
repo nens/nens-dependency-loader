@@ -5,7 +5,7 @@ N&S Dependency Loader changelog
 1.2.12 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Do not use pkg_resources.
 
 
 1.2.11 (2026-02-02)
