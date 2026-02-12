@@ -258,6 +258,49 @@ def check_importability():
         )
 
 
+def _cleanup_dist_info_directories(dependency, path):
+    """
+    Clean up .dist-info directories for a dependency.
+
+    pip uninstall sometimes fails to remove .dist-info directories,
+    This function explicitly searches for and removes all .dist-info
+    directories related to the dependency.
+    """
+    # Normalize names for matching (replace - with _ and vice versa)
+    normalized_names = [
+        dependency.name.replace("-", "_"),
+        dependency.name.replace("_", "-"),
+        dependency.package.replace("-", "_"),
+        dependency.package.replace("_", "-"),
+    ]
+
+    # Create set of possible patterns
+    search_patterns = list(set(normalized_names))
+
+    try:
+        for item in os.listdir(str(path)):
+            item_path = path / item
+            # Check if this is a .dist-info directory
+            if item.endswith(".dist-info"):
+                # Extract the package name from the .dist-info directory
+                # Format is typically: package_name-version.dist-info
+                dist_info_name = item[:-10].split("-")[0]
+
+                # Check if this dist-info belongs to our dependency
+                if any(
+                    pattern.lower() == dist_info_name.lower()
+                    for pattern in search_patterns
+                ):
+                    try:
+                        if item_path.exists():
+                            print(f"Removing .dist-info directory: {item}")
+                            shutil.rmtree(str(item_path))
+                    except Exception as e:
+                        print(f"Unable to remove .dist-info directory {item}: {str(e)}")
+    except Exception as e:
+        print(f"Error while cleaning up .dist-info directories: {str(e)}")
+
+
 def _uninstall_dependency(dependency):
     print("Trying to uninstalling dependency %s" % dependency.name)
     if dependency.tar:
@@ -319,6 +362,10 @@ def _uninstall_dependency(dependency):
             print("Uninstalling %s failed" % dependency.name)
     except Exception:
         print("Uninstalling %s failed" % dependency.name)
+
+    # Explicitly clean up any remaining .dist-info directories
+    # Sometimes pip uninstall fails to remove these
+    _cleanup_dist_info_directories(dependency, _dependencies_target_dir())
 
 
 def _install_dependencies(dependencies, target_dir):
