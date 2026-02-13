@@ -2,7 +2,7 @@ N&S Dependency Loader changelog
 ========================
 
 
-1.2.12 (unreleased)
+1.2.12 (2026-02-13)
 -------------------
 
 - Do not use pkg_resources.
