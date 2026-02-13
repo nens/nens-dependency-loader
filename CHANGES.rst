@@ -6,6 +6,7 @@ N&S Dependency Loader changelog
 -------------------
 
 - Do not use pkg_resources.
+- Bump threedi pip dependencies.
 
 
 1.2.11 (2026-02-02)
