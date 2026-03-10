@@ -5,7 +5,7 @@ N&S Dependency Loader changelog
 1.2.13 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Bump threedigrid to 2.3.6
 
 
 1.2.12 (2026-02-13)
