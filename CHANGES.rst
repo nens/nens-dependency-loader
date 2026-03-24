@@ -2,10 +2,16 @@ N&S Dependency Loader changelog
 ========================
 
 
-1.2.13 (unreleased)
+1.2.14 (unreleased)
 -------------------
 
 - Add python-slugify
+
+
+1.2.13 (2026-03-10)
+-------------------
+
+- Bump threedigrid to 2.3.6
 
 
 1.2.12 (2026-02-13)
