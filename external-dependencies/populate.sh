@@ -45,7 +45,9 @@ threedi-scenario-downloader \
 bridgestyle \
 pydantic \
 typing-inspection \
-annotated-types
+annotated-types \
+text-unidecode \
+python-slugify
 
 # Start a build/ directory for easier later cleanup.
 mkdir build
