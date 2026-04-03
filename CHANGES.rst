@@ -2,7 +2,7 @@ N&S Dependency Loader changelog
 ========================
 
 
-1.2.14 (unreleased)
+1.2.14 (2026-04-03)
 -------------------
 
 - Add python-slugify
