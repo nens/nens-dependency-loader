@@ -2,7 +2,7 @@ N&S Dependency Loader changelog
 ========================
 
 
-1.2.15 (unreleased)
+1.2.15 (2026-04-10)
 -------------------
 
 - Upgrade threedi-schema to 0.302.0
