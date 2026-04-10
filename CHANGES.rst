@@ -8,6 +8,7 @@ N&S Dependency Loader changelog
 - Upgrade threedi-schema to 0.302.0
 - Upgrade threedi-modelchecker to 2.18.18
 - Upgrade threedigrid to 2.3.8
+- Upgrade hydxlib to 1.7.5
 
 
 1.2.14 (2026-04-03)
