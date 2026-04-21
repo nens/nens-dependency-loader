@@ -70,7 +70,8 @@ DEPENDENCIES = [
     Dependency("pydantic", "pydantic", "==2.11.10", False),
     Dependency("pydantic-core", "pydantic_core", "==2.33.2", False),
     Dependency("text-unidecode", "text_unidecode", "", False),
-    Dependency("python-slugify", "slugify", "", False)
+    Dependency("python-slugify", "slugify", "", False),
+    Dependency("mistune", "mistune", "", False),
 ]
 
 # On Windows, the hdf5 binary and thus h5py version depends on the QGis version

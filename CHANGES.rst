@@ -5,7 +5,7 @@ N&S Dependency Loader changelog
 1.2.16 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Add mistune
 
 
 1.2.15 (2026-04-10)

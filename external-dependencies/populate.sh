@@ -47,7 +47,8 @@ pydantic \
 typing-inspection \
 annotated-types \
 text-unidecode \
-python-slugify
+python-slugify \
+mistune
 
 # Start a build/ directory for easier later cleanup.
 mkdir build
