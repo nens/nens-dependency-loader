@@ -6,6 +6,7 @@ N&S Dependency Loader changelog
 -------------------
 
 - Add mistune
+- Remove python-slugify
 
 
 1.2.15 (2026-04-10)
