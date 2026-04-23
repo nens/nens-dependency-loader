@@ -46,8 +46,6 @@ bridgestyle \
 pydantic \
 typing-inspection \
 annotated-types \
-text-unidecode \
-python-slugify \
 mistune
 
 # Start a build/ directory for easier later cleanup.
