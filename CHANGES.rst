@@ -7,6 +7,7 @@ N&S Dependency Loader changelog
 
 - Add mistune
 - Remove python-slugify
+- Bump threedi-modelchecker to 2.18.19
 
 
 1.2.15 (2026-04-10)
