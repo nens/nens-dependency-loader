@@ -2,7 +2,7 @@ N&S Dependency Loader changelog
 ========================
 
 
-1.2.16 (unreleased)
+1.2.16 (2026-05-06)
 -------------------
 
 - Add mistune
