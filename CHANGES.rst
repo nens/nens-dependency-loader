@@ -5,7 +5,8 @@ N&S Dependency Loader changelog
 1.2.18 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Bump hydxlib to 1.7.7
+- Bump mi-utils to 0.1.15
 
 
 1.2.17 (2026-06-01)
