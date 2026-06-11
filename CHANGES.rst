@@ -6,6 +6,8 @@ Rana Dependency Loader changelog
 -------------------
 
 - Display dependency loader as Rana Dependency Loader (nens/rana#4386)
+- Bump threedi-schema to 0.302.1
+- Bump threedi-modelchecker to 2.18.20
 - Bump hydxlib to 1.7.7
 - Bump mi-utils to 0.1.15
 
