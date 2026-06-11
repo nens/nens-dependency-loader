@@ -4,7 +4,7 @@ QGIS comes bundled with several python libraries, but the N&S plugins need more.
 
 ## Usage
 
-In order for your plugin to be loaded after the N&S dependency loader, append `N&S Dependency Loader` to the list of plugin dependencies in `metadata.txt`, or add the following line:
+In order for your plugin to be loaded after the Rana dependency loader, append `Rana Dependency Loader` to the list of plugin dependencies in `metadata.txt`, or add the following line:
 
 ```
 plugin_dependencies=Dependency Loader

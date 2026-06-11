@@ -1,10 +1,11 @@
-N&S Dependency Loader changelog
+Rana Dependency Loader changelog
 ========================
 
 
 1.2.18 (unreleased)
 -------------------
 
+- Display dependency loader as Rana Dependency Loader (nens/rana#4386)
 - Bump hydxlib to 1.7.7
 - Bump mi-utils to 0.1.15
 

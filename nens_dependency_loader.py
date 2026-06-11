@@ -55,8 +55,8 @@ class NenSDependencyLoader:
             QIcon(str(PLUGIN_DIR / "icon.svg")), "Info", self.iface.mainWindow()
         )
         self.action.triggered.connect(self.run)
-        self.iface.addPluginToMenu("N&&S Dependency Loader", self.action)
-        menu = self.iface.mainWindow().getPluginMenu("N&&S Dependency Loader")
+        self.iface.addPluginToMenu("Rana Dependency Loader", self.action)
+        menu = self.iface.mainWindow().getPluginMenu("Rana Dependency Loader")
 
         self.settings_action = QAction(
             QgsApplication.getThemeIcon("/processingAlgorithm.svg"),
@@ -67,7 +67,7 @@ class NenSDependencyLoader:
         menu.addAction(self.settings_action)
 
     def unload(self):
-        self.iface.removePluginMenu("N&&S Dependency Loader", self.action)
+        self.iface.removePluginMenu("Rana Dependency Loader", self.action)
         del self.action
         del self.settings_action
 
@@ -75,7 +75,7 @@ class NenSDependencyLoader:
         versions = "no constraints file detected"
         with open(str(PLUGIN_DIR / "constraints.txt"), "r") as file:
             versions = file.read()
-        QMessageBox.information(None, "N&S Dependency Loader", versions)
+        QMessageBox.information(None, "Rana Dependency Loader", versions)
 
     def open_settings_dialog(self):
         SettingsDialog(self.iface.mainWindow()).exec()
