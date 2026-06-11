@@ -104,7 +104,7 @@ logger = logging.getLogger(__name__)
 
 def create_progress_dialog(progress, text):
     dialog = QProgressDialog()
-    dialog.setWindowTitle("N&S Dependency Loader install progress")
+    dialog.setWindowTitle("Rana Dependency Loader install progress")
     dialog.setLabelText(text)
     dialog.setWindowFlags(Qt.WindowType.WindowStaysOnTopHint)
     bar = QProgressBar(dialog)
@@ -155,7 +155,7 @@ def ensure_everything_installed():
             if _is_windows():
                 # We always want to restart when deps are missing
                 msg = "Please restart QGIS to complete the installation "
-                msg += "process of Nelen & Schuurmans Dependency Loader."
+                msg += "process of Rana Dependency Loader."
                 QMessageBox.information(
                     None,
                     "Restart required",
