@@ -5,6 +5,8 @@ N&S Dependency Loader changelog
 1.2.18 (unreleased)
 -------------------
 
+- Bump threedi-schema to 0.302.1
+- Bump threedi-modelchecker to 2.18.20
 - Bump hydxlib to 1.7.7
 - Bump mi-utils to 0.1.15
 
