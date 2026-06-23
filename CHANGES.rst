@@ -2,7 +2,7 @@ N&S Dependency Loader changelog
 ========================
 
 
-1.2.18 (unreleased)
+1.2.18 (2026-06-23)
 -------------------
 
 - Bump threedi-schema to 0.302.1
