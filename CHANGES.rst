@@ -9,6 +9,7 @@ N&S Dependency Loader changelog
 - Bump threedi-modelchecker to 2.18.20
 - Bump hydxlib to 1.7.7
 - Bump mi-utils to 0.1.15
+- Bump bridgestyle to 0.1.9
 
 
 1.2.17 (2026-06-01)
