@@ -5,7 +5,8 @@ N&S Dependency Loader changelog
 1.2.19 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Bump hydxlib to 1.7.8 with fix for discharge_capacity units
+- Bump threedi-modelchecker to 2.18.22
 
 
 1.2.18 (2026-06-23)
