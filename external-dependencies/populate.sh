@@ -121,6 +121,7 @@ wget https://files.pythonhosted.org/packages/b8/d9/13bdde6521f322861fab67473cec4
 # Download windows wheels (cp39, cp312, win, amd64)
 wget https://files.pythonhosted.org/packages/2d/29/fce98fd55c7a58d0c17600f9a759ae6c3ee6851ba79ade8834ae11fe988f/threedigrid_builder-1.24.10-cp39-cp39-win_amd64.whl#sha256=6cdd4ea64b6c80dc7012d063596f9cc8ecdec05d966797a3bdcbbde968753e73
 wget https://files.pythonhosted.org/packages/53/be/4bb92b7f4486633811966dd74e8b827418c0c973e84ef0adf8649fe92283/threedigrid_builder-1.24.10-cp312-cp312-win_amd64.whl#sha256=5fcfc2aa5e43c242d38f608e7d55050baa90e1155dc233a3ca9bbac5618dd5f6
+wget https://files.pythonhosted.org/packages/28/1c/adbdffa05271fe66bd041f29df81868ea0e01f35bf6eb39b259b8d9e218e/threedigrid_builder-1.25.3-cp312-cp312-win_amd64.whl#sha256=c1aefe3ea0692ed46df1bd63847a8998c640d1e86b598dcfd2349a11f83f964b
 
 wget https://files.pythonhosted.org/packages/b2/8e/83d9e3bff5c0ff7a0ec7e850c785916e616ab20d8793943f9e1d2a987fab/shapely-2.0.0-cp39-cp39-win_amd64.whl
 wget https://files.pythonhosted.org/packages/7b/b3/857afd9dfbfc554f10d683ac412eac6fa260d1f4cd2967ecb655c57e831a/shapely-2.0.6-cp312-cp312-win_amd64.whl
@@ -137,6 +138,9 @@ wget https://files.pythonhosted.org/packages/43/e4/5479fecb3606c1368d496a825d841
 wget https://files.pythonhosted.org/packages/2c/08/28d03833293a2b19073095a0cc88cd986990265ecc5b1e97a78d1ac2e817/threedigrid_builder-1.24.10-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=2135160ed5593567057791fef9cfa5dbbdd4084d5c0099f7319ff8b112fa7883
 wget https://files.pythonhosted.org/packages/94/cd/4e7cda7e46c98b3fbc8c5d025e16aebfb35cfa328d7e3a3d05d8ad57a05c/threedigrid_builder-1.24.10-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=5198217c2e0ccd81d8ec0bc36f1a307d6c74095ff4b65e61344585d34e46987a
 wget https://files.pythonhosted.org/packages/89/e9/ce56d73a5d651998d960e4550f8b1e6727a50bf9dc3f463e6c090fafed17/threedigrid_builder-1.24.10-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=dbb4c71f7dd8fb905f0dcad69d33433a502fd6c9033b3838ef42a68d12676e1f
+wget https://files.pythonhosted.org/packages/a6/97/39d55b9827a9be47c386ee6447ef684cc85367f9baf9d0bfd77bc43fbec6/threedigrid_builder-1.25.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=e23d7112a95267e58550d1f43b79e5aca365a45c44e55923e9b06104dab9e8a9
+wget https://files.pythonhosted.org/packages/38/7b/ec37e8c315c0414ecf72bc5cc5464368477bddb61fd5edd3370312560677/threedigrid_builder-1.25.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=748272883c72eeec92b88e91b4229371f43da17e714fdae176740c7befd3e2c4
+wget https://files.pythonhosted.org/packages/ad/21/55125aedfcb5cda6b95e2b2e779df80abe757470a863815bfbbc9ddbf5d2/threedigrid_builder-1.25.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=9143589f2301bd64769f7d55b3b52a8a238aeef89fae37c523c2896074a34332
 
 wget https://files.pythonhosted.org/packages/06/07/0700e5e33c44bc87e19953244c29f73669cfb6f19868899170f9c7e34554/shapely-2.0.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
 wget https://files.pythonhosted.org/packages/d5/7d/9a57e187cbf2fbbbdfd4044a4f9ce141c8d221f9963750d3b001f0ec080d/shapely-2.0.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl

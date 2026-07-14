@@ -51,7 +51,6 @@ DEPENDENCIES = [
     Dependency("networkx", "networkx", "", False),
     Dependency("condenser", "condenser", ">=0.2.1", False),
     Dependency("Shapely", "shapely", ">=2.0.0", False),
-    Dependency("threedigrid-builder", "threedigrid_builder", ">=1.24.10", False),
     Dependency("h5netcdf", "h5netcdf", "", False),
     Dependency("greenlet", "greenlet", "!=0.4.17", False),
     Dependency("threedi-mi-utils", "threedi_mi_utils", "==0.1.15", False),
@@ -97,6 +96,16 @@ else:
     WINDOWS_PLATFORM_DEPENDENCIES = [
         Dependency("scipy", "scipy", "==1.10.1", True),
     ]
+
+# threedigrid-builder is compiled against numpy; QGis 4.2 upgraded to numpy 2.x
+if QGIS_VERSION >= 42000:
+    DEPENDENCIES.append(
+        Dependency("threedigrid-builder", "threedigrid_builder", "==1.25.3", False)
+    )
+else:
+    DEPENDENCIES.append(
+        Dependency("threedigrid-builder", "threedigrid_builder", ">=1.24.10", False)
+    )
 
 INTERESTING_IMPORTS = ["numpy", "osgeo", "pip", "setuptools", "packaging"]
 
