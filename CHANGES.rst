@@ -6,7 +6,7 @@ N&S Dependency Loader changelog
 -------------------
 
 - Bump hydxlib to 1.7.8 with fix for discharge_capacity units
-- Bump threedi-modelchecker to 2.18.22
+- Bump threedi-modelchecker to 2.18.23
 
 
 1.2.18 (2026-06-23)
