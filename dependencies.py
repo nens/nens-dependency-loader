@@ -311,6 +311,38 @@ def _cleanup_dist_info_directories(dependency, path):
         print(f"Error while cleaning up .dist-info directories: {str(e)}")
 
 
+def _cleanup_package_directory(dependency, path):
+    """
+    Remove the package directory from the target dir.
+
+    When using pip install --target --upgrade, stale files from a previous
+    version may remain if pip doesn't fully overwrite the package directory.
+    This causes ImportErrors (e.g. missing symbols in partially-updated packages).
+    """
+    normalized_names = list(
+        set(
+            [
+                dependency.package.replace("-", "_"),
+                dependency.name.replace("-", "_"),
+            ]
+        )
+    )
+
+    try:
+        for item in os.listdir(str(path)):
+            item_path = path / item
+            if not item_path.is_dir() or item.endswith(".dist-info"):
+                continue
+            if item.lower() in [n.lower() for n in normalized_names]:
+                try:
+                    print(f"Removing package directory: {item}")
+                    shutil.rmtree(str(item_path))
+                except Exception as e:
+                    print(f"Unable to remove package directory {item}: {str(e)}")
+    except Exception as e:
+        print(f"Error while cleaning up package directory: {str(e)}")
+
+
 def _uninstall_dependency(dependency):
     print("Trying to uninstalling dependency %s" % dependency.name)
     if dependency.tar:
@@ -376,6 +408,11 @@ def _uninstall_dependency(dependency):
     # Explicitly clean up any remaining .dist-info directories
     # Sometimes pip uninstall fails to remove these
     _cleanup_dist_info_directories(dependency, _dependencies_target_dir())
+
+    # Also remove the package directory from the target dir.
+    # pip uninstall only targets the default site-packages, not the --target dir.
+    # Stale files from a previous version can cause ImportErrors.
+    _cleanup_package_directory(dependency, _dependencies_target_dir())
 
 
 def _install_dependencies(dependencies, target_dir):
