@@ -2,7 +2,7 @@ N&S Dependency Loader changelog
 ========================
 
 
-1.2.19 (unreleased)
+1.2.19 (2026-07-16)
 -------------------
 
 - Bump hydxlib to 1.7.8 with fix for discharge_capacity units
