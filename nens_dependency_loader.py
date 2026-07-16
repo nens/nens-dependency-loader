@@ -17,7 +17,6 @@ from qgis.PyQt.QtWidgets import QSpacerItem
 
 import pyplugin_installer
 
-
 PLUGIN_DIR = Path(__file__).parent
 
 

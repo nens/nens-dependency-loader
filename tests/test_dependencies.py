@@ -6,7 +6,6 @@ import mock
 import os
 import pytest
 
-
 available_dependency = dependencies.Dependency("numpy", "numpy", "", False)
 dep_with_wrong_version = dependencies.Dependency("numpy", "numpy", "==1972", False)
 missing_dependency = dependencies.Dependency("reinout", "reinout", "", False)
