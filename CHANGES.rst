@@ -7,6 +7,8 @@ N&S Dependency Loader changelog
 
 - Bump hydxlib to 1.7.8 with fix for discharge_capacity units
 - Bump threedi-modelchecker to 2.18.23
+- Added h5py 3.16 and threedigrid-builder 1.25.3 for QGIS4 (numpy 2) support.
+- Updated metadata for QGIS4 support.
 
 
 1.2.18 (2026-06-23)
