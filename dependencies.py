@@ -44,7 +44,7 @@ DEPENDENCIES = [
     Dependency("threedidepth", "threedidepth", "==0.7.4", False),
     Dependency("click", "click", ">=8.0, <8.2", False),
     Dependency("packaging", "packaging", "", False),
-    Dependency("typing-extensions", "typing_extensions", ">=4.12.2", False),
+    Dependency("typing-extensions", "typing_extensions", ">=4.12.1", False),
     Dependency(
         "colorama", "colorama", "", False
     ),  # dep of click and threedi-modelchecker (windows)
@@ -67,7 +67,7 @@ DEPENDENCIES = [
     Dependency("typing-inspection", "typing_inspection", "==0.4.*", False),
     Dependency("annotated-types", "annotated_types", "==0.6.*", False),
     Dependency("pydantic", "pydantic", "==2.12.5", False),
-    Dependency("pydantic-core", "pydantic_core", "==2.31.5", False),
+    Dependency("pydantic-core", "pydantic_core", "==2.41.5", False),
     Dependency("mistune", "mistune", "", False),
 ]
 
