@@ -66,8 +66,8 @@ DEPENDENCIES = [
     Dependency("bridgestyle", "bridgestyle", "==0.1.9", False),
     Dependency("typing-inspection", "typing_inspection", "==0.4.*", False),
     Dependency("annotated-types", "annotated_types", "==0.6.*", False),
-    Dependency("pydantic", "pydantic", "==2.11.10", False),
-    Dependency("pydantic-core", "pydantic_core", "==2.33.2", False),
+    Dependency("pydantic", "pydantic", "==2.12.5", False),
+    Dependency("pydantic-core", "pydantic_core", "==2.31.5", False),
     Dependency("mistune", "mistune", "", False),
 ]
 
