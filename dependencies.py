@@ -44,7 +44,7 @@ DEPENDENCIES = [
     Dependency("threedidepth", "threedidepth", "==0.7.4", False),
     Dependency("click", "click", ">=8.0, <8.2", False),
     Dependency("packaging", "packaging", "", False),
-    Dependency("typing-extensions", "typing_extensions", ">=4.12.1", False),
+    Dependency("typing-extensions", "typing_extensions", ">=4.14.1", False),
     Dependency(
         "colorama", "colorama", "", False
     ),  # dep of click and threedi-modelchecker (windows)
@@ -381,6 +381,7 @@ def _uninstall_dependency(dependency):
                 "-m",
                 "pip",
                 "uninstall",
+                "--break-system-packages",
                 "--yes",
                 (dependency.name),
             ],
