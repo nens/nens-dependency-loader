@@ -32,6 +32,7 @@ zip: compile
 	rm -rf /tmp/$(PLUGINNAME)/docker-compose.yml
 	rm -rf /tmp/$(PLUGINNAME)/docker-compose.override.yml
 	rm -rf /tmp/$(PLUGINNAME)/Makefile
+	rm -rf /tmp/$(PLUGINNAME)/check_backend_versions.py
 	rm -rf /tmp/$(PLUGINNAME)/requirements-dev.txt
 	rm -rf /tmp/$(PLUGINNAME)/setup.cfg
 	rm -rf /tmp/$(PLUGINNAME)/upload-artifact.sh
