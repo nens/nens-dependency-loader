@@ -58,7 +58,7 @@ def main():
             file=sys.stderr,
         )
         return 1
-    print(f"{PACKAGE} versions match: {local}")
+    print(f"{PACKAGE} versions match: {local} <= {backend}")
     return 0
 
 
