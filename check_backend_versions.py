@@ -1,14 +1,15 @@
 """Check that the threedi-schema pin in dependencies.py matches the backend.
 
- Requires the HCC_API_TOKEN environment variable (Personal API key).
+Requires the HCC_API_TOKEN environment variable (Personal API key).
 """
+
+from packaging.version import Version
+
 import base64
 import json
 import os
 import sys
 import urllib.request
-
-from packaging.version import Version
 
 URL = "https://hcc-api.ranawaterintelligence.com/v3/package-versions/"
 PACKAGE = "threedi-schema"
@@ -54,7 +55,7 @@ def main():
         return 2
     if Version(local) > Version(backend):
         print(
-            f"{PACKAGE} is newer locally: dependencies.py has {local}, backend has {backend}",
+            f"{PACKAGE} is newer locally ({local}), backend has {backend}",
             file=sys.stderr,
         )
         return 1
