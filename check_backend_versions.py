@@ -1,7 +1,8 @@
 """Check that the threedi-schema pin in dependencies.py matches the backend.
 
-Requires the HCC_API_TOKEN environment variable (bearer token).
+ Requires the HCC_API_TOKEN environment variable (Personal API key).
 """
+import base64
 import json
 import os
 import sys
@@ -29,7 +30,11 @@ def backend_version():
         raise ValueError("HCC_API_TOKEN is not set")
     request = urllib.request.Request(
         URL,
-        headers={"Authorization": "Bearer " + token, "Accept": "application/json"},
+        headers={
+            "Authorization": "Basic "
+            + base64.b64encode(f"__key__:{token}".encode()).decode("ascii"),
+            "Accept": "application/json",
+        },
     )
     with urllib.request.urlopen(request, timeout=30) as response:
         data = json.load(response)
