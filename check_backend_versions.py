@@ -8,6 +8,8 @@ import os
 import sys
 import urllib.request
 
+from packaging.version import Version
+
 URL = "https://hcc-api.ranawaterintelligence.com/v3/package-versions/"
 PACKAGE = "threedi-schema"
 
@@ -50,9 +52,9 @@ def main():
     if backend is None:
         print(f"Error: {PACKAGE} not found in backend response", file=sys.stderr)
         return 2
-    if local != backend:
+    if Version(local) > Version(backend):
         print(
-            f"{PACKAGE} mismatch: dependencies.py has {local}, backend has {backend}",
+            f"{PACKAGE} is newer locally: dependencies.py has {local}, backend has {backend}",
             file=sys.stderr,
         )
         return 1
