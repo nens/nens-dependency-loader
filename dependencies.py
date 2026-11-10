@@ -67,7 +67,7 @@ DEPENDENCIES = [
     Dependency("typing-inspection", "typing_inspection", "==0.4.*", False),
     Dependency("annotated-types", "annotated_types", "==0.6.*", False),
     Dependency("pydantic", "pydantic", "==2.11.10", False),
-    Dependency("pydantic-core", "pydantic_core", "==2.33.2", False),
+    Dependency("pydantic-core", "pydantic_core", "==2.35.2", False),
     Dependency("mistune", "mistune", "", False),
 ]
 
@@ -97,8 +97,14 @@ else:
         Dependency("scipy", "scipy", "==1.10.1", True),
     ]
 
-# threedigrid-builder is compiled against numpy; QGis 4.2 upgraded to numpy 2.x
-if QGIS_VERSION >= 42000:
+
+if QGIS_VERSION >= 40203 and not platform.system() == "Windows":
+    # This version is based on python 3.14
+    DEPENDENCIES.append(
+        Dependency("threedigrid-builder", "threedigrid_builder", "==1.25.8", False)
+    )
+elif QGIS_VERSION >= 40200:
+    # threedigrid-builder is compiled against numpy; QGis 4.2 upgraded to numpy 2.x
     DEPENDENCIES.append(
         Dependency("threedigrid-builder", "threedigrid_builder", "==1.25.3", False)
     )
@@ -381,6 +387,7 @@ def _uninstall_dependency(dependency):
                 "-m",
                 "pip",
                 "uninstall",
+                "--break-system-packages",
                 "--yes",
                 (dependency.name),
             ],
@@ -426,6 +433,7 @@ def _install_dependencies(dependencies, target_dir):
         "pip",
         "install",
         "--upgrade",
+        "--break-system-packages",
         "--no-deps",
         "--find-links",
         str(OUR_DIR / "external-dependencies"),
