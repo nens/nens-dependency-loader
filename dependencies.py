@@ -36,7 +36,7 @@ DEPENDENCIES = [
     ),  # backward compat. alembic
     Dependency("zipp", "zipp", "", False),  # backward compat. alembic
     Dependency("Mako", "mako", "", False),
-    Dependency("cftime", "cftime", ">=1.5.0", False),  # threedigrid[results]
+    Dependency("cftime", "cftime", "==1.6.6.1" if sys.version_info >= (3, 11) else ">=1.5.0", False),  # threedigrid[results]
     Dependency("alembic", "alembic", "==1.14.*", False),
     Dependency("threedigrid", "threedigrid", "==2.3.8", False),
     Dependency("threedi-schema", "threedi_schema", "==0.302.1", False),
@@ -100,7 +100,7 @@ else:
 # threedigrid-builder is compiled against numpy; QGis 4.2 upgraded to numpy 2.x
 if QGIS_VERSION >= 42000:
     DEPENDENCIES.append(
-        Dependency("threedigrid-builder", "threedigrid_builder", "==1.25.3", False)
+        Dependency("threedigrid-builder", "threedigrid_builder", "==1.25.8", False)
     )
 else:
     DEPENDENCIES.append(
