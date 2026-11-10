@@ -124,7 +124,7 @@ wget https://files.pythonhosted.org/packages/28/1c/adbdffa05271fe66bd041f29df818
 wget https://files.pythonhosted.org/packages/7b/b3/857afd9dfbfc554f10d683ac412eac6fa260d1f4cd2967ecb655c57e831a/shapely-2.0.6-cp312-cp312-win_amd64.whl
 wget https://files.pythonhosted.org/packages/43/21/a5d9df1d21514883333fc86584c07c2b49ba7c602e670b174bd73cfc9c7f/greenlet-3.1.1-cp312-cp312-win_amd64.whl#sha256=7124e16b4c55d417577c2077be379514321916d5790fa287c9ed6f23bd2ffd01
 wget https://files.pythonhosted.org/packages/17/98/ba5b4a2f37c6c88454b696dd5c7a4e76fc8bfd014364b47ddd7e2cec0fcd/cftime-1.6.4-cp312-cp312-win_amd64.whl#sha256=5b5ad7559a16bedadb66af8e417b6805f758acb57aa38d2730844dfc63a1e667
-wget https://files.pythonhosted.org/packages/43/e4/5479fecb3606c1368d496a825d8411e126133c41224c1e7238be58b87d7e/pydantic_core-2.33.2-cp312-cp312-win_amd64.whl#sha256=f941635f2a3d96b2973e867144fde513665c87f13fe0e193c158ac51bfaaa7b2
+wget https://files.pythonhosted.org/packages/20/dd/12f4c03bc6e065d4243f5dffb61e2d73a39663ce27a2da1ac68746459308/pydantic_core-2.35.2-cp312-cp312-win_amd64.whl#sha256=6544065eb63995e6c8f30119c8297acab0426c7231f33b792fb6176c29ba771
 
 # Download linux wheels (cp312, cp313, cp314)
 wget https://files.pythonhosted.org/packages/94/cd/4e7cda7e46c98b3fbc8c5d025e16aebfb35cfa328d7e3a3d05d8ad57a05c/threedigrid_builder-1.24.10-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=5198217c2e0ccd81d8ec0bc36f1a307d6c74095ff4b65e61344585d34e46987a
@@ -145,8 +145,7 @@ wget https://files.pythonhosted.org/packages/04/56/233d817ef571d778281f3d639049b
 wget https://files.pythonhosted.org/packages/c3/f8/6f13d37abb7ade46e65a08acc31af776a96dde0eb569e05d4c4b01422ba6/cftime-1.6.4.post1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=6579c5c83cdf09d73aa94c7bc34925edd93c5f2c7dd28e074f568f7e376271a0
 wget https://files.pythonhosted.org/packages/b4/aa/e2e5c07f57233d171a0506153d2f50dc3d09e9f6273b2a578f76379d1526/cftime-1.6.6-cp311-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl#sha256=59a2c7821642b62c18e71ea67f84ce13ec2bb51ce7ee348cf0a3c50d55fd91cb
 
-wget https://files.pythonhosted.org/packages/f9/41/4b043778cf9c4285d59742281a769eac371b9e47e35f98ad321349cc5d61/pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=8f57a69461af2a5fa6e6bbd7a5f60d3b7e6cebb687f55106933188e79ad155c1
-wget https://files.pythonhosted.org/packages/eb/3c/f4abd740877a35abade05e437245b192f9d0ffb48bbbbd708df33d3cda37/pydantic_core-2.33.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=9fdac5d6ffa1b5a83bca06ffe7583f5576555e6c8b3a91fbd25ea7780f825f7d
+wget https://files.pythonhosted.org/packages/cc/de/560965eb01915181a0f966c2b567dcb43c70114a7115197f2ef6d9aab9ee/pydantic_core-2.35.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=85014d39aeffc3eef49ca31dcfae7e33deb318d98bc91d3641c5237452e9fc2
 wget https://files.pythonhosted.org/packages/31/13/cb780bc228619f3b2e5e9395a9efad5030fb3fbe658e25856ba270fc0bbd/pydantic_core-2.35.2-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=70bc9c0984b9b6da0f064cd5a1b6b5111637f30dd05999f565faa6d5e10e5e62
 
 touch .generated.marker

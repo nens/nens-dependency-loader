@@ -52,19 +52,19 @@ As a last step, `__init__.py` calls `dependencies.check_importability` to make d
 
 In order to run the tests, linting and packaging, first build the docker
 ```
-  docker-compose build
+  docker compose build
 ```
 To run the tests:
 ```
-  docker-compose run --rm qgis-desktop make test
+  docker compose run --rm qgis-desktop make test
 ```
 To run the linters (flake8, black and isort):
 ```
-  docker-compose run --rm qgis-desktop make lint
+  docker compose run --rm qgis-desktop make lint
 ```
 To create a zip:
 ```
-   docker-compose run --rm qgis-desktop make zip
+   docker compose run --rm qgis-desktop make zip
 ```
 ## Release
 

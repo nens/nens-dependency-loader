@@ -77,7 +77,7 @@ DEPENDENCIES = [
 QGIS_VERSION = Qgis.QGIS_VERSION_INT
 if QGIS_VERSION < 32806 and platform.system() == "Windows":
     H5PY_DEPENDENCY = Dependency("h5py", "h5py", "==2.10.0", False)
-elif QGIS_VERSION >= 42000 and platform.system() == "Windows":
+elif QGIS_VERSION >= 40200 and platform.system() == "Windows":
     H5PY_DEPENDENCY = Dependency("h5py", "h5py", "==3.16.0", True)
 elif QGIS_VERSION >= 34000 and platform.system() == "Windows":
     H5PY_DEPENDENCY = Dependency("h5py", "h5py", "==3.10.0", True)
