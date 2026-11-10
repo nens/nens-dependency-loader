@@ -19,6 +19,12 @@ jobs:
       - name: build
         run: docker compose build
 
+      - name: check threedi-schema version against backend
+        if: ${{ !startsWith(github.event.ref, 'refs/tags') }}
+        run: docker compose run -e HCC_API_TOKEN qgis-desktop python3 check_backend_versions.py
+        env:
+          HCC_API_TOKEN: ${{ secrets.HCC_API_TOKEN }}
+
       - name: test
         run: |
           docker compose run qgis-desktop make check
