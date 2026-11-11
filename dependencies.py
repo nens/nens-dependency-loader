@@ -84,7 +84,10 @@ elif QGIS_VERSION >= 34000 and platform.system() == "Windows":
 else:
     H5PY_DEPENDENCY = Dependency("h5py", "h5py", "==3.8.0", True)
 
-if QGIS_VERSION < 32811 and platform.system() == "Windows":
+if QGIS_VERSION >= 40200:
+    # QGis 4.2 ships a numpy 2.x compatible scipy; a bundled copy conflicts with it
+    WINDOWS_PLATFORM_DEPENDENCIES = []
+elif QGIS_VERSION < 32811 and platform.system() == "Windows":
     WINDOWS_PLATFORM_DEPENDENCIES = [
         Dependency("scipy", "scipy", "==1.6.2", False),
     ]
