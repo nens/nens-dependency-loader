@@ -40,7 +40,7 @@ DEPENDENCIES = [
     Dependency("alembic", "alembic", "==1.14.*", False),
     Dependency("threedigrid", "threedigrid", "==2.3.8", False),
     Dependency("threedi-schema", "threedi_schema", "==0.302.1", False),
-    Dependency("threedi-modelchecker", "threedi_modelchecker", "==2.18.26", False),
+    Dependency("threedi-modelchecker", "threedi_modelchecker", "==2.18.27", False),
     Dependency("threedidepth", "threedidepth", "==0.7.4", False),
     Dependency("click", "click", ">=8.0, <8.2", False),
     Dependency("packaging", "packaging", "", False),
@@ -54,8 +54,13 @@ DEPENDENCIES = [
     Dependency("h5netcdf", "h5netcdf", "", False),
     Dependency("greenlet", "greenlet", "!=0.4.17", False),
     Dependency("threedi-mi-utils", "threedi_mi_utils", "==0.1.15", False),
+<<<<<<< HEAD
     Dependency("hydxlib", "hydxlib", "==1.7.8", False),
     Dependency("threedi-api-client", "threedi_api_client", "==5.0.*", False),
+=======
+    Dependency("hydxlib", "hydxlib", "==1.8.0", False),
+    Dependency("threedi-api-client", "threedi_api_client", "==4.2.6", False),
+>>>>>>> a8d9619 (Bump modelchecker to 2.18.27 and hydxlib to 1.8.0)
     Dependency("six", "six", "", False),
     Dependency("urllib3", "urllib3", "", False),
     Dependency("requests", "requests", "", False),
