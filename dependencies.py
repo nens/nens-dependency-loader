@@ -44,7 +44,7 @@ DEPENDENCIES = [
     Dependency("threedidepth", "threedidepth", "==0.7.4", False),
     Dependency("click", "click", ">=8.0, <8.2", False),
     Dependency("packaging", "packaging", "", False),
-    Dependency("typing-extensions", "typing_extensions", ">=4.12.2", False),
+    Dependency("typing-extensions", "typing_extensions", ">=4.14.1", False),
     Dependency(
         "colorama", "colorama", "", False
     ),  # dep of click and threedi-modelchecker (windows)
@@ -64,10 +64,10 @@ DEPENDENCIES = [
     Dependency("certifi", "certifi", "", False),
     Dependency("threedi-scenario-downloader", "threedi_scenario_downloader", "", False),
     Dependency("bridgestyle", "bridgestyle", "==0.1.9", False),
-    Dependency("typing-inspection", "typing_inspection", "==0.4.*", False),
+    Dependency("typing-inspection", "typing_inspection", ">=0.4.2,<0.5", False),
     Dependency("annotated-types", "annotated_types", "==0.6.*", False),
-    Dependency("pydantic", "pydantic", "==2.11.10", False),
-    Dependency("pydantic-core", "pydantic_core", "==2.33.2", False),
+    Dependency("pydantic", "pydantic", "==2.12.5", False),
+    Dependency("pydantic-core", "pydantic_core", "==2.41.5", False),
     Dependency("mistune", "mistune", "", False),
 ]
 
@@ -77,14 +77,17 @@ DEPENDENCIES = [
 QGIS_VERSION = Qgis.QGIS_VERSION_INT
 if QGIS_VERSION < 32806 and platform.system() == "Windows":
     H5PY_DEPENDENCY = Dependency("h5py", "h5py", "==2.10.0", False)
-elif QGIS_VERSION >= 42000 and platform.system() == "Windows":
+elif QGIS_VERSION >= 40200 and platform.system() == "Windows":
     H5PY_DEPENDENCY = Dependency("h5py", "h5py", "==3.16.0", True)
 elif QGIS_VERSION >= 34000 and platform.system() == "Windows":
     H5PY_DEPENDENCY = Dependency("h5py", "h5py", "==3.10.0", True)
 else:
     H5PY_DEPENDENCY = Dependency("h5py", "h5py", "==3.8.0", True)
 
-if QGIS_VERSION < 32811 and platform.system() == "Windows":
+if QGIS_VERSION >= 40200:
+    # QGis 4.2 ships a numpy 2.x compatible scipy; a bundled copy conflicts with it
+    WINDOWS_PLATFORM_DEPENDENCIES = []
+elif QGIS_VERSION < 32811 and platform.system() == "Windows":
     WINDOWS_PLATFORM_DEPENDENCIES = [
         Dependency("scipy", "scipy", "==1.6.2", False),
     ]
@@ -97,8 +100,14 @@ else:
         Dependency("scipy", "scipy", "==1.10.1", True),
     ]
 
-# threedigrid-builder is compiled against numpy; QGis 4.2 upgraded to numpy 2.x
-if QGIS_VERSION >= 42000:
+
+if QGIS_VERSION >= 40203 and not platform.system() == "Windows":
+    # This version is based on python 3.14
+    DEPENDENCIES.append(
+        Dependency("threedigrid-builder", "threedigrid_builder", "==1.25.8", False)
+    )
+elif QGIS_VERSION >= 40200:
+    # threedigrid-builder is compiled against numpy; QGis 4.2 upgraded to numpy 2.x
     DEPENDENCIES.append(
         Dependency("threedigrid-builder", "threedigrid_builder", "==1.25.3", False)
     )
@@ -381,6 +390,7 @@ def _uninstall_dependency(dependency):
                 "-m",
                 "pip",
                 "uninstall",
+                "--break-system-packages",
                 "--yes",
                 (dependency.name),
             ],
@@ -426,6 +436,7 @@ def _install_dependencies(dependencies, target_dir):
         "pip",
         "install",
         "--upgrade",
+        "--break-system-packages",
         "--no-deps",
         "--find-links",
         str(OUR_DIR / "external-dependencies"),
