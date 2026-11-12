@@ -5,7 +5,8 @@ N&S Dependency Loader changelog
 1.2.23 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Bump threedi-modelchecker to 2.18.27
+- Bump hydxlib to 1.8.0
 
 
 1.2.22 (2026-10-19)
