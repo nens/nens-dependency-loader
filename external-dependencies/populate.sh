@@ -133,6 +133,7 @@ wget https://files.pythonhosted.org/packages/5f/d6/5f59a5e5570c4414d94c6da4c9773
 wget https://files.pythonhosted.org/packages/17/98/ba5b4a2f37c6c88454b696dd5c7a4e76fc8bfd014364b47ddd7e2cec0fcd/cftime-1.6.4-cp312-cp312-win_amd64.whl#sha256=5b5ad7559a16bedadb66af8e417b6805f758acb57aa38d2730844dfc63a1e667
 
 wget https://files.pythonhosted.org/packages/43/e4/5479fecb3606c1368d496a825d8411e126133c41224c1e7238be58b87d7e/pydantic_core-2.33.2-cp312-cp312-win_amd64.whl#sha256=f941635f2a3d96b2973e867144fde513665c87f13fe0e193c158ac51bfaaa7b2
+wget https://files.pythonhosted.org/packages/86/45/00173a033c801cacf67c190fef088789394feaf88a98a7035b0e40d53dc9/pydantic_core-2.41.5-cp312-cp312-win_amd64.whl#sha256=1962293292865bca8e54702b08a4f26da73adc83dd1fcf26fbc875b35d81c815
 
 # Download linux wheels (cp310, cp312, cp313)
 wget https://files.pythonhosted.org/packages/2c/08/28d03833293a2b19073095a0cc88cd986990265ecc5b1e97a78d1ac2e817/threedigrid_builder-1.24.10-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=2135160ed5593567057791fef9cfa5dbbdd4084d5c0099f7319ff8b112fa7883
