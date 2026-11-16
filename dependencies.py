@@ -54,13 +54,8 @@ DEPENDENCIES = [
     Dependency("h5netcdf", "h5netcdf", "", False),
     Dependency("greenlet", "greenlet", "!=0.4.17", False),
     Dependency("threedi-mi-utils", "threedi_mi_utils", "==0.1.15", False),
-<<<<<<< HEAD
-    Dependency("hydxlib", "hydxlib", "==1.7.8", False),
-    Dependency("threedi-api-client", "threedi_api_client", "==5.0.*", False),
-=======
     Dependency("hydxlib", "hydxlib", "==1.8.0", False),
-    Dependency("threedi-api-client", "threedi_api_client", "==4.2.6", False),
->>>>>>> a8d9619 (Bump modelchecker to 2.18.27 and hydxlib to 1.8.0)
+    Dependency("threedi-api-client", "threedi_api_client", "==5.0.*", False),
     Dependency("six", "six", "", False),
     Dependency("urllib3", "urllib3", "", False),
     Dependency("requests", "requests", "", False),
