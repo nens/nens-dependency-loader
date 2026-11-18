@@ -5,7 +5,7 @@ N&S Dependency Loader changelog
 1.2.24 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Changed Nelen & Schuurmans references in metadata to Rana.
 
 
 1.2.23 (2026-11-12)
@@ -258,4 +258,3 @@ N&S Dependency Loader changelog
 ----------------
 
 - Initial release.
-

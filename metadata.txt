@@ -2,12 +2,12 @@
 name=Nelen and Schuurmans Dependency Loader
 qgisMinimumVersion=3.22
 qgisMaximumVersion=4.99
-description=A QGIS plugin that installs and imports all required dependencies for Nelen and Schuurmans plugins.
+description=A QGIS plugin that installs and imports all required dependencies for Rana plugins.
 version=1.2.24
-author=Nelen & Schuurmans
-email=servicedesk@nelen-schuurmans.nl
+author=Rana Water Intelligence
+email=support@ranawaterintelligence.com
 
-about=This plugin will be installed automatically by Rana and 3Di plugins that need it. It provides python dependencies that these plugins share. They are bundled in one plugin to prevent dependency conflicts and to make updating easier. 
+about=This plugin will be installed automatically by Rana plugins that need it. It provides python dependencies that those plugins share. They are bundled in one plugin to prevent dependency conflicts and to make updating easier.
 tracker=https://github.com/nens/nens-dependency-loader
 repository=https://github.com/nens/nens-dependency-loader
 changelog=https://github.com/nens/nens-dependency-loader/blob/main/CHANGES.rst
@@ -15,7 +15,7 @@ changelog=https://github.com/nens/nens-dependency-loader/blob/main/CHANGES.rst
 # Tags are comma separated with spaces allowed
 tags=dependencies, Rana
 
-homepage=https://nelen-schuurmans.nl/
+homepage=https://ranawaterintelligence.com
 category=Plugins
 icon=icon.svg
 experimental=False
