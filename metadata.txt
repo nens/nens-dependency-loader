@@ -6,7 +6,6 @@ description=A QGIS plugin that installs and imports all required dependencies fo
 version=1.2.24
 author=Rana Water Intelligence
 email=support@ranawaterintelligence.com
->>>>>>> Stashed changes
 
 about=This plugin will be installed automatically by Rana plugins that need it. It provides python dependencies that those plugins share. They are bundled in one plugin to prevent dependency conflicts and to make updating easier.
 tracker=https://github.com/nens/nens-dependency-loader
